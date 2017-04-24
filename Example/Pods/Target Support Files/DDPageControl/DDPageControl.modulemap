@@ -1,0 +1,6 @@
+framework module DDPageControl {
+  umbrella header "DDPageControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

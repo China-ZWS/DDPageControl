@@ -24,6 +24,10 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A35A2DABC9A741A44CA5D485 /* Pods_DDPageControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A876ED862FF1098E29B35893 /* Pods_DDPageControl_Tests.framework */; };
+		E4EB77001EADE170007AECDE /* DDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB76FF1EADE170007AECDE /* DDAViewController.m */; };
+		E4EB77031EADE188007AECDE /* DDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB77021EADE188007AECDE /* DDBViewController.m */; };
+		E4EB77061EADE193007AECDE /* DDCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB77051EADE193007AECDE /* DDCViewController.m */; };
+		E4EB77091EADE9E0007AECDE /* DDMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB77081EADE9E0007AECDE /* DDMangerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,16 +60,24 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		69D90A6A2C6D8DA0AD104499 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		69D90A6A2C6D8DA0AD104499 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6FA6DA32EAECA6C110CB430E /* Pods_DDPageControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDPageControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A876ED862FF1098E29B35893 /* Pods_DDPageControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDPageControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBD0626204E5221D352368DA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BBD0626204E5221D352368DA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C9494BDD2C5C10F6854EC097 /* Pods-DDPageControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPageControl_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDPageControl_Tests/Pods-DDPageControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D1F3FA64739F02DD8957A32D /* Pods-DDPageControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPageControl_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDPageControl_Tests/Pods-DDPageControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D26761D0BAB99E8361E7EAFD /* Pods-DDPageControl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPageControl_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDPageControl_Example/Pods-DDPageControl_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E87FA1F6BE40260FABC59925 /* DDPageControl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DDPageControl.podspec; path = ../DDPageControl.podspec; sourceTree = "<group>"; };
+		E4EB76FE1EADE170007AECDE /* DDAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAViewController.h; sourceTree = "<group>"; };
+		E4EB76FF1EADE170007AECDE /* DDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAViewController.m; sourceTree = "<group>"; };
+		E4EB77011EADE188007AECDE /* DDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBViewController.h; sourceTree = "<group>"; };
+		E4EB77021EADE188007AECDE /* DDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBViewController.m; sourceTree = "<group>"; };
+		E4EB77041EADE193007AECDE /* DDCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCViewController.h; sourceTree = "<group>"; };
+		E4EB77051EADE193007AECDE /* DDCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCViewController.m; sourceTree = "<group>"; };
+		E4EB77071EADE9E0007AECDE /* DDMangerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMangerController.h; sourceTree = "<group>"; };
+		E4EB77081EADE9E0007AECDE /* DDMangerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMangerController.m; sourceTree = "<group>"; };
+		E87FA1F6BE40260FABC59925 /* DDPageControl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DDPageControl.podspec; path = ../DDPageControl.podspec; sourceTree = "<group>"; };
 		EDAFAEBC831E6D98F775D86C /* Pods-DDPageControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPageControl_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDPageControl_Example/Pods-DDPageControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,11 +144,14 @@
 		6003F593195388D20070C39A /* Example for DDPageControl */ = {
 			isa = PBXGroup;
 			children = (
+				E4EB76FD1EADE15C007AECDE /* ViewControllers */,
 				6003F59C195388D20070C39A /* DDAppDelegate.h */,
 				6003F59D195388D20070C39A /* DDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* DDViewController.h */,
 				6003F5A6195388D20070C39A /* DDViewController.m */,
+				E4EB77071EADE9E0007AECDE /* DDMangerController.h */,
+				E4EB77081EADE9E0007AECDE /* DDMangerController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -196,6 +211,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E4EB76FD1EADE15C007AECDE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB76FE1EADE170007AECDE /* DDAViewController.h */,
+				E4EB76FF1EADE170007AECDE /* DDAViewController.m */,
+				E4EB77011EADE188007AECDE /* DDBViewController.h */,
+				E4EB77021EADE188007AECDE /* DDBViewController.m */,
+				E4EB77041EADE193007AECDE /* DDCViewController.h */,
+				E4EB77051EADE193007AECDE /* DDCViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,7 +275,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DD;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "China-ZWS";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -394,8 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB77091EADE9E0007AECDE /* DDMangerController.m in Sources */,
 				6003F59E195388D20070C39A /* DDAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DDViewController.m in Sources */,
+				E4EB77061EADE193007AECDE /* DDCViewController.m in Sources */,
+				E4EB77001EADE170007AECDE /* DDAViewController.m in Sources */,
+				E4EB77031EADE188007AECDE /* DDBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,14 +491,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -499,13 +536,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
