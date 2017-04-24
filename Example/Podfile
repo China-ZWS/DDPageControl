@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DDPageControl_Example' do
+  pod 'DDPageControl', :path => '../'
+
+  target 'DDPageControl_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
