@@ -1,6 +1,6 @@
 {
   "name": "DDPageControl",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "summary": "DDPageControl.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/China-ZWS/DDPageControl",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/China-ZWS/DDPageControl.git",
-    "tag": "0.1.1"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"

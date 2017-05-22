@@ -16,8 +16,14 @@
 // content
 #import "DDPageContentView.h"
 
+// model
+#import "DDPageModel.h"
+
 #define SEGMENT_BAR_HEIGHT 44.f
 #define INDICATOR_HEIGHT 3.f
+
+/** 按钮之间的间距 */
+static CGFloat const DDPageTitleMargin = 20;
 
 
 @interface DDPageControl () <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
@@ -26,34 +32,72 @@
 @property (nonatomic, strong) DDPageContentView *contentView;    //!< 滑动内容
 @property (nonatomic) NSInteger selectedIndex;                   //!< 选中的下标
 @property (nonatomic, strong) UIView *indicatorLayer;
+@property (nonatomic, assign) NSInteger startOffsetX;            //!< 记录刚开始时的偏移量
+
+@property (nonatomic, strong) NSMutableArray *pageModels;
 
 @end
 
 @implementation DDPageControl
 
-- (instancetype)initWithControllers:(NSArray *)controllers
-{
+- (void)configWithData {
+    _selectedIndex = NSNotFound;
+    _scrollLineColor = [UIColor redColor];
+    _titleColor = [UIColor blackColor];
+    _titleFont = DDPageFont(15);
+    _selectedTitleColor = [UIColor redColor];
+    _pageModels = NSMutableArray.array;
+}
+
+- (instancetype)init {
     if ((self = [super init])) {
-        _controllers = controllers;
-        _selectedIndex = NSNotFound;
-        _scrollLineColor = [UIColor redColor];
-        _titleColor = [UIColor blackColor];
-        _titleFont = DDPageFont(15);
-        _selectedTitleColor = [UIColor redColor];
+        [self configWithData];
     }
     return self;
 }
+
++ (instancetype)controllers:(NSArray *)controllers {
+    DDPageControl *control = [[self alloc] init];
+    control.controllers = controllers;
+    return control;
+}
+
+- (instancetype)initWithControllers:(NSArray *)controllers
+{
+    if ((self = [super init])) {
+        [self configWithData];
+        self.controllers = controllers;
+    }
+    return self;
+}
+
+- (CGFloat)getSizeWithText:(NSString *)text font:(UIFont *)font;
+{
+    
+    if (text.length) {
+        NSDictionary * attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+        NSAttributedString *attributedText =[[NSAttributedString alloc]initWithString:text attributes:attributes];
+        CGRect rect = [attributedText boundingRectWithSize:CGSizeZero
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                   context:nil];
+        return rect.size.width;
+    }
+    return 0;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // 内部组件
     [self setUpViews];
-
+    
+    [self reloadData];
+    
     [self reset];
+
+
 }
-
-
 
 - (void)setUpViews
 {
@@ -65,15 +109,53 @@
     [_pageBar registerClass:[DDPageBarItem class] forCellWithReuseIdentifier:@"title"];
 //    /* 线条 */
     [_pageBar addSubview:self.indicatorLayer];
-
+    
 }
+
+- (void)reloadData {
+    if (!_controllers.count) return;
+    
+    // 如果 _pageModels 有值清空
+    if (_pageModels && _pageModels.count) [_pageModels removeAllObjects];
+    
+    __block CGFloat totalTextSizeWidth = 0;
+    __block CGFloat maxTextSizeWidth = 0;
+    // 计算所有按钮的文字宽度
+    [_controllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIViewController *vc = (UIViewController *)obj;
+        CGFloat tempWidth = [self getSizeWithText:vc.title font:_titleFont] + DDPageTitleMargin;
+        DDPageModel *model = DDPageModel.new;
+        model.viewController = obj;
+        model.originalItemX = totalTextSizeWidth;
+        model.originalItemWidth = tempWidth;
+        totalTextSizeWidth += tempWidth;
+        model.targetItemX = totalTextSizeWidth;
+
+        [_pageModels addObject:model];
+        if (maxTextSizeWidth < tempWidth) {
+            maxTextSizeWidth = tempWidth;
+        }
+    }];
+    
+    CGRect rect = _indicatorLayer.frame;
+    DDPageModel *model = _pageModels.firstObject;
+    rect.size.width = model.originalItemWidth - 20;
+    rect.origin.x = 10;
+    _indicatorLayer.frame = rect;
+    
+    if (totalTextSizeWidth <= self.view.frame.size.width) {
+        for (DDPageModel *vc in _pageModels) {
+            vc.originalItemWidth = maxTextSizeWidth;
+        }
+    }
+}
+
 
 #pragma mark - 初始化segmentBarLayout
 
 - (UICollectionViewFlowLayout *)segmentBarLayout
 {
     UICollectionViewFlowLayout *segmentBarLayout = [[UICollectionViewFlowLayout alloc] init];
-    segmentBarLayout.itemSize = CGSizeMake(self.view.frame.size.width / _controllers.count, SEGMENT_BAR_HEIGHT);
     segmentBarLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     segmentBarLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     segmentBarLayout.minimumLineSpacing = 0;
@@ -103,7 +185,7 @@
         if (_contentView) {
             content = _contentView;
         } else {
-            content = [[DDPageContentView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_pageBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(_pageBar.frame))];
+            content = [[DDPageContentView alloc] initWithFrame:CGRectMake(0,CGRectGetHeight(_pageBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(_pageBar.frame))];
             content.backgroundColor = self.view.backgroundColor;
 
             [content setShowsHorizontalScrollIndicator:NO];
@@ -119,7 +201,7 @@
 
 - (void)reset
 {
-    CGSize conentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _controllers.count, 0);
+    CGSize conentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _pageModels.count, 0);
     [_contentView setContentSize:conentSize];
 
     if (_defaultSelected == 0) {
@@ -138,7 +220,7 @@
         if (_indicatorLayer) {
             layer = _indicatorLayer;
         } else {
-            CGRect frame = CGRectMake(5, CGRectGetHeight(_pageBar.frame) - INDICATOR_HEIGHT, CGRectGetWidth(self.view.frame) / _controllers.count - 10, INDICATOR_HEIGHT);
+            CGRect frame = CGRectMake(0, CGRectGetHeight(_pageBar.frame) - INDICATOR_HEIGHT, 0, INDICATOR_HEIGHT);
             layer = UIView.new;
             layer.frame = frame;
             layer.backgroundColor = _scrollLineColor;
@@ -149,12 +231,21 @@
 
 #pragma mark - delegate or dataSource
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (_pageModels.count > 0) {
+        DDPageModel *model = _pageModels[indexPath.row];
+        return CGSizeMake(model.originalItemWidth, SEGMENT_BAR_HEIGHT);
+    }
+    return CGSizeZero;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if ([_dataSource respondsToSelector:@selector(slideSegment:numberOfItemsInSection:)]) {
         return [_dataSource slideSegment:collectionView numberOfItemsInSection:section];
     }
-    return _controllers.count;
+    return _pageModels.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -170,8 +261,9 @@
     barItem.titleLabel.textColor = _titleColor;
     barItem.titleLabel.font = _titleFont;
 
-    UIViewController *vc = _controllers[indexPath.row];
-    barItem.titleLabel.text = vc.title;
+    DDPageModel *model = _pageModels[indexPath.row];
+
+    barItem.titleLabel.text = model.viewController.title;
     if (_selectedIndex == indexPath.row) {
         barItem.titleLabel.highlighted = YES;
     }
@@ -182,12 +274,12 @@
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    if (indexPath.row < 0 || indexPath.row >= _controllers.count) {
+    if (indexPath.row < 0 || indexPath.row >= _pageModels.count) {
         return NO;
     }
 
     BOOL flag = YES;
-    UIViewController *vc = _controllers[indexPath.row];
+    UIViewController *vc = _pageModels[indexPath.row];
     if ([_delegate respondsToSelector:@selector(slideSegment:shouldSelectViewController:)]) {
         flag = [_delegate slideSegment:collectionView shouldSelectViewController:vc];
     }
@@ -196,7 +288,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < 0 || indexPath.row >= _controllers.count) {
+    if (indexPath.row < 0 || indexPath.row >= _pageModels.count) {
         return;
     }
     [self scrollToViewWithIndex:indexPath.row animated:YES];
@@ -213,42 +305,87 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-
+    
     if (scrollView == _contentView) {
-        // set indicator frame
-        CGRect frame = _indicatorLayer.frame;
+        
         CGFloat percent = scrollView.contentOffset.x / scrollView.contentSize.width;
-        frame.origin.x = scrollView.frame.size.width * percent + 5;
-        _indicatorLayer.frame = frame;
-        NSInteger index = round(percent * _controllers.count);
-        if (index >= 0 && index < _controllers.count)
+        NSInteger index = round(percent * _pageModels.count);
+        if (index >= 0 && index < _pageModels.count)
         {
             [self setSelectedIndex:index];
         }
+        
+        CGFloat currentOffsetX = scrollView.contentOffset.x;
+        CGFloat scrollViewW = scrollView.bounds.size.width;
+        CGFloat progress = 0;
+        NSInteger currentModelIndex = 0;
+        DDPageModel *model = nil;
+        
+        if (currentOffsetX > self.startOffsetX) { // 左滑
+            currentModelIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
+            model = _pageModels[currentModelIndex];
+            if (currentModelIndex + 1 < _pageModels.count) {
+                DDPageModel *targetModel = _pageModels[currentModelIndex + 1];
+                model.targetItemWidth = targetModel.originalItemWidth;
+            }
+            
+            progress = currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW);
+            CGFloat offsetX = model.originalItemWidth * progress;
+            CGFloat distance = progress * (model.targetItemWidth - model.originalItemWidth);
+            
+            
+            CGRect frame = _indicatorLayer.frame;
+            frame.origin.x =  model.originalItemX + offsetX + 10;
+            frame.size.width = model.originalItemWidth + distance - 20;
+            _indicatorLayer.frame = frame;
+            
+        } else {
+            currentModelIndex = scrollView.contentOffset.x / scrollView.bounds.size.width + 1;
+            model = _pageModels[currentModelIndex];
+            if (currentModelIndex - 1 >= 0) {
+                DDPageModel *targetModel = _pageModels[currentModelIndex - 1];
+                model.targetItemWidth = targetModel.originalItemWidth;
+            }
+            progress = 1 - (currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW));
+            CGFloat offsetX = model.targetItemWidth * progress;
+            CGFloat distance = progress * (model.targetItemWidth - model.originalItemWidth);
+           
+            CGRect frame = _indicatorLayer.frame;
+            frame.origin.x =  model.originalItemX - offsetX + 10;
+            frame.size.width = model.originalItemWidth + distance - 20;
+            _indicatorLayer.frame = frame;
+            
+        }
     }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _startOffsetX = scrollView.contentOffset.x;
 }
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
 {
     if (_selectedIndex == selectedIndex) return;
 
+    [_pageBar scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+
     DDPageBarItem *newItem = (DDPageBarItem *)[_pageBar cellForItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
     newItem.titleLabel.highlighted = YES;
 
     DDPageBarItem *oldItem = (DDPageBarItem *)[_pageBar cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
     oldItem.titleLabel.highlighted = NO;
+    
+    NSParameterAssert(selectedIndex >= 0 && selectedIndex < _pageModels.count);
 
-    NSParameterAssert(selectedIndex >= 0 && selectedIndex < _controllers.count);
-
-    UIViewController *toSelectController = [_controllers objectAtIndex:selectedIndex];
+    DDPageModel *model = [_pageModels objectAtIndex:selectedIndex];
+    UIViewController *toSelectController = model.viewController;
     if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:index:)]) {
         [_delegate slideSegment:_pageBar didSelectedViewController:toSelectController index:selectedIndex];
     }
 
-
     //    toSelectController.title
     // Add selected view controller as child view controller
-    if (!toSelectController.parentViewController) {
+    if (!model.viewController.parentViewController) {
         [self addChildViewController:toSelectController];
         CGRect rect = _contentView.bounds;
         rect.origin.x = rect.size.width * selectedIndex;

@@ -14,6 +14,7 @@
 #import "DDPageContentView.h"
 #import "DDPageControl.h"
 #import "DDPageDefine.h"
+#import "DDPageModel.h"
 #import "DDPageProtocol.h"
 
 FOUNDATION_EXPORT double DDPageControlVersionNumber;

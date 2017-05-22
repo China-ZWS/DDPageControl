@@ -24,5 +24,6 @@
 @property (nonatomic, assign) NSInteger defaultSelected;
 
 - (instancetype)initWithControllers:(NSArray *)controllers;
++ (instancetype)controllers:(NSArray *)controllers;
 
 @end

@@ -1,5 +1,5 @@
 PODS:
-  - DDPageControl (0.1.1)
+  - DDPageControl (0.2.0)
 
 DEPENDENCIES:
   - DDPageControl (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DDPageControl: 8fde99f9df71da3b85f71a9bed999faa50fbb442
+  DDPageControl: 608cebaea788ce668e0d1262b1e0babe7cd74f29
 
 PODFILE CHECKSUM: 7b6ec17909b3a7479457ef8533e9357c2294dc98
 

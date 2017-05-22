@@ -10,8 +10,8 @@
 
 @implementation DDMangerController
 
-- (instancetype) initWithControllers:(NSArray *)controllers {
-    if ((self = [super initWithControllers:controllers])) {
+- (instancetype)init {
+    if ((self = [super init])) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
     }
     return self;
