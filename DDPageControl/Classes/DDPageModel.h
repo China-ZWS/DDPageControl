@@ -13,6 +13,7 @@
 @property (nonatomic, assign) CGFloat originalItemX;
 @property (nonatomic, assign) CGFloat originalItemWidth;
 @property (nonatomic, assign) CGFloat targetItemX;
+@property (nonatomic, strong) UIColor *currentColor;
 @property (nonatomic, assign) CGFloat targetItemWidth;
 @property (nonatomic, strong) UIViewController *viewController;
 @property (nonatomic, assign) CGFloat indicatorCenterX;

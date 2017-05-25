@@ -56,7 +56,7 @@
     if ((self = [super initWithFrame:frame collectionViewLayout:layout])) {
 
         self.backgroundColor = DDPageWhiteColor(1);
-
+        self.showsHorizontalScrollIndicator = NO;
         _line = CALayer.new;
         _line.backgroundColor = DDPageLineColor.CGColor;
         [self.layer addSublayer:_line];

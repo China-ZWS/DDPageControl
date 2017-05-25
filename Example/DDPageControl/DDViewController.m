@@ -33,14 +33,14 @@
 }
 
 - (IBAction)onClickWithPush:(id)sender {
-    NSArray *vcs = @[DDAViewController.new,DDBViewController.new,DDCViewController.new,DDBViewController.new,DDCViewController.new,DDAViewController.new,DDBViewController.new];
+    NSArray *vcs = @[DDAViewController.new,DDBViewController.new,DDCViewController.new,DDBViewController.new,DDCViewController.new,DDBViewController.new,DDCViewController.new,DDBViewController.new,DDCViewController.new];
 //    DDMangerController *pageControl = [[DDMangerController alloc] initWithControllers:vcs];
-    DDMangerController *pageControl = [DDMangerController controllers:vcs];
-//    DDMangerController *pageControl = DDMangerController.new;
-//    pageControl.controllers = vcs;
+//    DDMangerController *pageControl = [DDMangerController controllers:vcs];
+    DDMangerController *pageControl = DDMangerController.new;
+    pageControl.controllers = vcs;
     pageControl.titleColor = [UIColor blackColor];
     pageControl.selectedTitleColor = [UIColor redColor];
-    pageControl.defaultSelected = 1;
+//    pageControl.defaultSelected = 1;
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:pageControl] animated:YES completion:NULL];
 }
 

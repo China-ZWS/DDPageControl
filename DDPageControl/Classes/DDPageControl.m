@@ -47,6 +47,7 @@ static CGFloat const DDPageTitleMargin = 20;
     _titleFont = DDPageFont(15);
     _selectedTitleColor = [UIColor redColor];
     _pageModels = NSMutableArray.array;
+    _defaultSelected = 0;
 }
 
 - (instancetype)init {
@@ -93,10 +94,6 @@ static CGFloat const DDPageTitleMargin = 20;
     [self setUpViews];
     
     [self reloadData];
-    
-    [self reset];
-
-
 }
 
 - (void)setUpViews
@@ -130,24 +127,42 @@ static CGFloat const DDPageTitleMargin = 20;
         model.originalItemWidth = tempWidth;
         totalTextSizeWidth += tempWidth;
         model.targetItemX = totalTextSizeWidth;
-
         [_pageModels addObject:model];
+        
+        if (_defaultSelected == idx) {
+            model.currentColor = _selectedTitleColor;
+        } else {
+            model.currentColor = _titleColor;
+        }
+        
         if (maxTextSizeWidth < tempWidth) {
             maxTextSizeWidth = tempWidth;
         }
     }];
+    
+    if (maxTextSizeWidth <= self.view.frame.size.width / _pageModels.count) {
+        maxTextSizeWidth = self.view.frame.size.width / _pageModels.count;
+    }
+    
+    if (totalTextSizeWidth <= self.view.frame.size.width) {
+        totalTextSizeWidth = 0;
+        for (DDPageModel *model in _pageModels) {
+            model.originalItemX = totalTextSizeWidth;
+            model.originalItemWidth = maxTextSizeWidth;
+            totalTextSizeWidth += maxTextSizeWidth;
+            model.targetItemX = totalTextSizeWidth;
+        }
+    }
     
     CGRect rect = _indicatorLayer.frame;
     DDPageModel *model = _pageModels.firstObject;
     rect.size.width = model.originalItemWidth - 20;
     rect.origin.x = 10;
     _indicatorLayer.frame = rect;
-    
-    if (totalTextSizeWidth <= self.view.frame.size.width) {
-        for (DDPageModel *vc in _pageModels) {
-            vc.originalItemWidth = maxTextSizeWidth;
-        }
-    }
+    _indicatorLayer.backgroundColor = _scrollLineColor;
+    [_pageBar reloadData];
+    [self reset];
+
 }
 
 
@@ -223,7 +238,6 @@ static CGFloat const DDPageTitleMargin = 20;
             CGRect frame = CGRectMake(0, CGRectGetHeight(_pageBar.frame) - INDICATOR_HEIGHT, 0, INDICATOR_HEIGHT);
             layer = UIView.new;
             layer.frame = frame;
-            layer.backgroundColor = _scrollLineColor;
         }
         layer;
     });
@@ -255,13 +269,12 @@ static CGFloat const DDPageTitleMargin = 20;
     if ([_dataSource respondsToSelector:@selector(slideSegment:cellForItemAtIndexPath:)]) {
         return [_dataSource slideSegment:collectionView cellForItemAtIndexPath:indexPath];
     }
+    DDPageModel *model = _pageModels[indexPath.row];
+
     DDPageBarItem *barItem = [collectionView dequeueReusableCellWithReuseIdentifier:@"title" forIndexPath:indexPath];
 
-    barItem.titleLabel.highlightedTextColor = _selectedTitleColor;
-    barItem.titleLabel.textColor = _titleColor;
+    barItem.titleLabel.textColor = model.currentColor;
     barItem.titleLabel.font = _titleFont;
-
-    DDPageModel *model = _pageModels[indexPath.row];
 
     barItem.titleLabel.text = model.viewController.title;
     if (_selectedIndex == indexPath.row) {
@@ -368,12 +381,16 @@ static CGFloat const DDPageTitleMargin = 20;
     if (_selectedIndex == selectedIndex) return;
 
     [_pageBar scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    
+    DDPageModel *targetModel = _pageModels[selectedIndex];
+    targetModel.currentColor = _selectedTitleColor;
+    if (_selectedIndex >=0 && _selectedIndex < _pageModels.count) {
+        DDPageModel *originalModel = _pageModels[_selectedIndex];
+        originalModel.currentColor = _titleColor;
+    }
+    
+    [_pageBar reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:selectedIndex inSection:0],[NSIndexPath indexPathForRow:_selectedIndex inSection:0]]];
 
-    DDPageBarItem *newItem = (DDPageBarItem *)[_pageBar cellForItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
-    newItem.titleLabel.highlighted = YES;
-
-    DDPageBarItem *oldItem = (DDPageBarItem *)[_pageBar cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
-    oldItem.titleLabel.highlighted = NO;
     
     NSParameterAssert(selectedIndex >= 0 && selectedIndex < _pageModels.count);
 

@@ -16,14 +16,15 @@
 @property (nonatomic, assign) CGRect barFrame;
 @property (nonatomic, assign) id <DDPageDelegate> delegate;
 @property (nonatomic, assign) id <DDPageDataSource> dataSource;
-@property (nonatomic, assign) UIColor *titleColor;
-@property (nonatomic, assign) UIColor *selectedTitleColor;
-@property (nonatomic, assign) UIFont *titleFont;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *selectedTitleColor;
+@property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *scrollLineColor;
 @property (nonatomic, strong) NSArray *controllers;              //!< VC集合
 @property (nonatomic, assign) NSInteger defaultSelected;
 
 - (instancetype)initWithControllers:(NSArray *)controllers;
 + (instancetype)controllers:(NSArray *)controllers;
+- (void)reloadData;
 
 @end
