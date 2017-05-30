@@ -396,9 +396,6 @@ static CGFloat const DDPageTitleMargin = 20;
 
     DDPageModel *model = [_pageModels objectAtIndex:selectedIndex];
     UIViewController *toSelectController = model.viewController;
-    if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:index:)]) {
-        [_delegate slideSegment:_pageBar didSelectedViewController:toSelectController index:selectedIndex];
-    }
 
     //    toSelectController.title
     // Add selected view controller as child view controller
@@ -412,6 +409,10 @@ static CGFloat const DDPageTitleMargin = 20;
     }
     [self.view endEditing:YES];
     _selectedIndex = selectedIndex;
+    if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:index:)]) {
+        [_delegate slideSegment:_pageBar didSelectedViewController:toSelectController index:selectedIndex];
+    }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
