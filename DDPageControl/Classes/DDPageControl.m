@@ -209,6 +209,7 @@ static CGFloat const DDPageTitleMargin = 20;
             [content setPagingEnabled:YES];
             [content setBounces:NO];
             [content setDelegate:self];
+            [content setScrollEnabled:_scrollEnabled];
         }
         content;
     });

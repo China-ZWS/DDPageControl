@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIColor *scrollLineColor;
 @property (nonatomic, strong) NSArray *controllers;              //!< VC集合
 @property (nonatomic, assign) NSInteger defaultSelected;
+@property (nonatomic, assign) BOOL scrollEnabled;
 
 - (instancetype)initWithControllers:(NSArray *)controllers;
 + (instancetype)controllers:(NSArray *)controllers;
