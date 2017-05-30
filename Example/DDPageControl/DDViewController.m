@@ -40,6 +40,7 @@
     pageControl.controllers = vcs;
     pageControl.titleColor = [UIColor blackColor];
     pageControl.selectedTitleColor = [UIColor redColor];
+    pageControl.scrollEnabled = YES;
 //    pageControl.defaultSelected = 1;
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:pageControl] animated:YES completion:NULL];
 }

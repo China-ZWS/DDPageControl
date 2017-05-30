@@ -48,6 +48,7 @@ static CGFloat const DDPageTitleMargin = 20;
     _selectedTitleColor = [UIColor redColor];
     _pageModels = NSMutableArray.array;
     _defaultSelected = 0;
+    _scrollEnabled = YES;
 }
 
 - (instancetype)init {
@@ -202,14 +203,13 @@ static CGFloat const DDPageTitleMargin = 20;
         } else {
             content = [[DDPageContentView alloc] initWithFrame:CGRectMake(0,CGRectGetHeight(_pageBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(_pageBar.frame))];
             content.backgroundColor = self.view.backgroundColor;
-
+            content.scrollEnabled = _scrollEnabled;
             [content setShowsHorizontalScrollIndicator:NO];
             content.autoresizingMask = UIViewAutoresizingFlexibleHeight;
             [content setShowsVerticalScrollIndicator:NO];
             [content setPagingEnabled:YES];
             [content setBounces:NO];
             [content setDelegate:self];
-            [content setScrollEnabled:_scrollEnabled];
         }
         content;
     });
