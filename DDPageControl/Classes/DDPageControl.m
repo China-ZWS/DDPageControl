@@ -397,8 +397,6 @@ static CGFloat const DDPageTitleMargin = 20;
     DDPageModel *model = [_pageModels objectAtIndex:selectedIndex];
     UIViewController *toSelectController = model.viewController;
 
-    //    toSelectController.title
-    // Add selected view controller as child view controller
     if (!model.viewController.parentViewController) {
         [self addChildViewController:toSelectController];
         CGRect rect = _contentView.bounds;
