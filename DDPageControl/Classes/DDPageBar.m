@@ -67,7 +67,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _line.frame = CGRectMake(0, CGRectGetHeight(self.frame) - DDPageScreenScale, CGRectGetWidth(self.frame), DDPageScreenScale);
+    _line.frame = CGRectMake(0, CGRectGetHeight(self.frame) - DDPageScreenScale, self.contentSize.width, DDPageScreenScale);
 }
 
 @end
