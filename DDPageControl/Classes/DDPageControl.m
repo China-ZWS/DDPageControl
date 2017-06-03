@@ -355,6 +355,10 @@ static CGFloat const DDPageTitleMargin = 20;
             
         } else {
             currentModelIndex = scrollView.contentOffset.x / scrollView.bounds.size.width + 1;
+            if (_pageModels.count <= currentModelIndex) {
+                currentModelIndex = _pageModels.count - 1;
+            }
+
             model = _pageModels[currentModelIndex];
             if (currentModelIndex - 1 >= 0) {
                 DDPageModel *targetModel = _pageModels[currentModelIndex - 1];

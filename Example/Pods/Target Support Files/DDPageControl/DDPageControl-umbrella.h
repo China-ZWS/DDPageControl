@@ -16,6 +16,10 @@
 #import "DDPageDefine.h"
 #import "DDPageModel.h"
 #import "DDPageProtocol.h"
+#import "DDPageBarManager.h"
+#import "DDPageBarPresenter.h"
+#import "DDPageContentManager.h"
+#import "DDPageContentPresenter.h"
 
 FOUNDATION_EXPORT double DDPageControlVersionNumber;
 FOUNDATION_EXPORT const unsigned char DDPageControlVersionString[];
