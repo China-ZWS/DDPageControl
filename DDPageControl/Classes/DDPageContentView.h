@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DDPageContentView : UIScrollView
+@interface DDPageContentViewCell : UICollectionViewCell
+
+@end
+
+@interface DDPageContentView : UICollectionView
 
 @end

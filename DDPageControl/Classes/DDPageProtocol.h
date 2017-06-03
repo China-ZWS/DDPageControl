@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @protocol DDPageDelegate <NSObject>
+
 @optional
-- (void)slideSegment:(UICollectionView *)segmentBar didSelectedViewController:(UIViewController *)viewController index:(NSInteger)index;
 
 - (BOOL)slideSegment:(UICollectionView *)segmentBar shouldSelectViewController:(UIViewController *)viewController;
+
+- (void)slideSegment:(UICollectionView *)segmentBar didSelectedViewController:(UIViewController *)viewController index:(NSInteger)index;
+
 @end
 
 @protocol DDPageDataSource <NSObject>
+
 @required
 
 - (NSInteger)slideSegment:(UICollectionView *)segmentBar
@@ -25,5 +29,7 @@
                 cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
+
 - (NSInteger)numberOfSectionsInslideSegment:(UICollectionView *)segmentBar;
+
 @end

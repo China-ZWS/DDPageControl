@@ -8,6 +8,93 @@
 
 #import "DDPageContentManager.h"
 
+static NSString *const cellIdentifier = @"DDPageContentViewCell";
+
+@interface DDPageContentManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageContentPresenterDelegate>
+//
+@property (nonatomic, strong) DDPageContentView *contentView;               
+@property (nonatomic, strong) DDPageContentPresenter *presenter;
+@property (nonatomic, assign) CGSize itemSize;
+
+@end
+
 @implementation DDPageContentManager
+
++ (instancetype)initWithPresenter:(DDPageContentPresenter *)presenter {
+    return [[DDPageContentManager alloc] initWithPresenter:presenter];
+}
+
+- (instancetype)initWithPresenter:(DDPageContentPresenter *)presenter {
+    if ((self = [super init])) {
+        self.presenter = presenter;
+        self.presenter.manager = self;
+    }
+    return self;
+}
+
+#pragma mark - 初始化segmentBarLayout
+
+- (UICollectionViewFlowLayout *)segmentBarLayout {
+    UICollectionViewFlowLayout *segmentBarLayout = [[UICollectionViewFlowLayout alloc] init];
+    segmentBarLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    segmentBarLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    segmentBarLayout.minimumLineSpacing = 0;
+    segmentBarLayout.minimumInteritemSpacing = 0;
+    return segmentBarLayout;
+}
+
+- (DDPageContentView *)contentView {
+    return _contentView = ({
+        DDPageContentView *bar = nil;
+        if (_contentView) {
+            bar = _contentView;
+        } else {
+            bar = [[DDPageContentView alloc] initWithFrame:CGRectMake(0, 0, 1, 1) collectionViewLayout:[self segmentBarLayout]];
+            [bar registerClass:[DDPageContentViewCell class] forCellWithReuseIdentifier:cellIdentifier];
+            bar.delegate = self;
+            bar.dataSource = self;
+        }
+        bar;
+    });
+}
+
+- (void)setContentViewWithitemSize:(CGSize)itemSize {
+    self.itemSize = itemSize;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (CGSizeEqualToSize(_itemSize, CGSizeZero)) {
+        return CGSizeZero;
+    }
+    return _itemSize;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _presenter.cellModels.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *const identifier = @"DDPageContentViewCell";
+    DDPageContentViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    UIViewController *controller = _presenter.cellModels[indexPath.row];
+    controller.view.frame = cell.contentView.bounds;
+    [cell.contentView addSubview:controller.view];
+    return cell;
+}
+
+- (void)scrollToViewWithIndex:(NSInteger)index animated:(BOOL)animated {
+    [_contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+   
+    if ([_delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        [_delegate scrollViewDidScroll:scrollView];
+    }
+}
+
 
 @end

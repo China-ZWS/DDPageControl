@@ -24,7 +24,6 @@
             lb = [[UILabel alloc] initWithFrame:self.contentView.bounds];
             lb.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
             lb.textAlignment = NSTextAlignmentCenter;
-//            lb.textColor = [UIColor whiteColor];
         }
         lb;
     });
