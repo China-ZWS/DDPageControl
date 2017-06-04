@@ -8,11 +8,12 @@
 
 #import "DDPageContentManager.h"
 
+
 static NSString *const cellIdentifier = @"DDPageContentViewCell";
 
 @interface DDPageContentManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageContentManagerDelegate>
-//
-@property (nonatomic, strong) DDPageContentView *contentView;               
+
+@property (nonatomic, strong) DDPageContentView *contentView;
 @property (nonatomic, strong) DDPagePresenter *presenter;
 @property (nonatomic, assign) CGSize itemSize;
 
@@ -125,11 +126,15 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 
 - (void)loadLodingForOnscreenRows {
   
+    
     CGFloat percent = _contentView.contentOffset.x / _contentView.contentSize.width;
     NSInteger index = round(percent * _presenter.cellModels.count);
+    
     if (index >= 0 && index < _presenter.cellModels.count)
     {
         DDPageModel *pageModel = _presenter.cellModels[index];
+        
+        
         if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
             [_delegate contentView:_contentView didSelectedViewController:pageModel.viewController scrollToIndex:index];
         }

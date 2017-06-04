@@ -12,24 +12,9 @@
 
 @optional
 
-- (BOOL)slideSegment:(UICollectionView *)segmentBar shouldSelectViewController:(UIViewController *)viewController;
+- (NSMutableDictionary *)slideSegment:(UICollectionView *)segmentBar willSelectedForOperationWithViewController:(UIViewController *)viewController index:(NSInteger)index;
 
 - (void)slideSegment:(UICollectionView *)segmentBar didSelectedViewController:(UIViewController *)viewController index:(NSInteger)index;
 
-@end
-
-@protocol DDPageDataSource <NSObject>
-
-@required
-
-- (NSInteger)slideSegment:(UICollectionView *)segmentBar
-   numberOfItemsInSection:(NSInteger)section;
-
-- (UICollectionViewCell *)slideSegment:(UICollectionView *)segmentBar
-                cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-
-@optional
-
-- (NSInteger)numberOfSectionsInslideSegment:(UICollectionView *)segmentBar;
 
 @end

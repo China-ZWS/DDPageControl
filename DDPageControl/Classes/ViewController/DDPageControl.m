@@ -22,6 +22,7 @@
 @property (nonatomic, strong) DDPageBarManager *barManager;
 @property (nonatomic, strong) DDPageContentManager *contentManager;
 @property (nonatomic, strong) DDPagePresenter *presenter;
+@property (nonatomic, strong) NSMutableDictionary *operations;
 
 - (void)dd_configuration;
 - (void)dd_addUI;
@@ -41,6 +42,7 @@
     _defaultSelected = 0;
     _scrollEnabled = YES;
     _barFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44);
+    
 }
 
 - (instancetype)init {
@@ -77,6 +79,8 @@
 
 - (void)dd_configuration {
     
+    _operations = NSMutableDictionary.dictionary;
+
     _presenter = DDPagePresenter.new;
     _presenter.titleFont = _titleFont;
  
@@ -124,9 +128,15 @@
         // 越界处理
         _defaultSelected = _controllers.count - 1;
     }
+    
+    
     if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
     }
+
+    // 初始化Size
+    CGSize conentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _controllers.count, 0);
+    [_contentManager.contentView setContentSize:conentSize];
     
     //  代码控制是不会启动懒加载的
     [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];

@@ -10,15 +10,15 @@
 #endif
 #endif
 
-#import "DDPageBar.h"
-#import "DDPageContentView.h"
-#import "DDPageControl.h"
 #import "DDPageDefine.h"
-#import "DDPageModel.h"
 #import "DDPageProtocol.h"
+#import "DDPageModel.h"
 #import "DDPageBarManager.h"
 #import "DDPageContentManager.h"
 #import "DDPagePresenter.h"
+#import "DDPageBar.h"
+#import "DDPageContentView.h"
+#import "DDPageControl.h"
 
 FOUNDATION_EXPORT double DDPageControlVersionNumber;
 FOUNDATION_EXPORT const unsigned char DDPageControlVersionString[];

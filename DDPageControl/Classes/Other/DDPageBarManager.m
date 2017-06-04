@@ -114,9 +114,7 @@
     if (indexPath.row < 0 || indexPath.row >= _presenter.cellModels.count) {
         return;
     }
-    if (_selectedIndex != indexPath.row) {
-        _selectedIndex = indexPath.row;
-    }
+    if (_selectedIndex == indexPath.row) return;
     DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
     UIViewController *toSelectController = pageModel.viewController;
     if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
@@ -201,7 +199,6 @@
     [_pageBar reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:selectedIndex inSection:0],[NSIndexPath indexPathForRow:_selectedIndex inSection:0]]];
     
     _selectedIndex = selectedIndex;
-    
 }
 
 - (void)reloadData {

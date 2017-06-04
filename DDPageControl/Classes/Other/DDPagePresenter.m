@@ -95,4 +95,22 @@ static CGFloat const DDPageTitleMargin = 20;
     return 0;
 }
 
+#pragma mark-懒加载queue
+
+-(NSOperationQueue *)queue
+{
+    return _queue = ({
+        NSOperationQueue *q = NSOperationQueue.new;
+        if (_queue) {
+            q = _queue;
+        } else {
+            q=[[NSOperationQueue alloc]init];
+            //设置最大并发数为1
+            q.maxConcurrentOperationCount=1;
+        }
+        q;
+    });
+}
+
+
 @end

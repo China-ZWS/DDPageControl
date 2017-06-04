@@ -35,6 +35,9 @@
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *scrollLineColor;
 
+@property (nonatomic, strong) NSOperationQueue *queue;
+
+
 - (void)fetchDatasWithViewWidth:(CGFloat)viewWidth controllers:(NSArray *)controllers completionHandler:(dispatch_block_t)completionHandler;
 
 @end
