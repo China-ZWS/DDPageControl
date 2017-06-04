@@ -11,10 +11,10 @@
 #define SEGMENT_BAR_HEIGHT 44.f
 #define INDICATOR_HEIGHT 3.f
 
-@interface DDPageBarManager () <UICollectionViewDelegate, UICollectionViewDataSource, DDPageBarPresenterDelegate>
+@interface DDPageBarManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageBarManagerDelegate>
 
 @property (nonatomic, strong) DDPageBar *pageBar;                //!< bar
-@property (nonatomic, strong) DDPageBarPresenter *presenter;
+@property (nonatomic, strong) DDPagePresenter *presenter;
 @property (nonatomic) NSInteger selectedIndex;                   //!< 选中的下标
 @property (nonatomic, assign) NSInteger startOffsetX;            //!< 记录刚开始时的偏移量
 @property (nonatomic, strong) UIView *indicatorLayer;
@@ -23,14 +23,14 @@
 
 @implementation DDPageBarManager
 
-+ (instancetype)initWithPresenter:(DDPageBarPresenter *)presenter {
++ (instancetype)initWithPresenter:(DDPagePresenter *)presenter {
     return [[DDPageBarManager alloc] initWithPresenter:presenter];
 }
 
-- (instancetype)initWithPresenter:(DDPageBarPresenter *)presenter {
+- (instancetype)initWithPresenter:(DDPagePresenter *)presenter {
     if ((self = [super init])) {
         self.presenter = presenter;
-        self.presenter.manager = self;
+        self.presenter.pageBarManager = self;
         
     }
     return self;
@@ -93,9 +93,6 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if ([_dataSource respondsToSelector:@selector(slideSegment:numberOfItemsInSection:)]) {
-        return [_dataSource slideSegment:collectionView numberOfItemsInSection:section];
-    }
     return _presenter.cellModels.count;
 }
 
@@ -103,58 +100,32 @@
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if ([_dataSource respondsToSelector:@selector(slideSegment:cellForItemAtIndexPath:)]) {
-        return [_dataSource slideSegment:collectionView cellForItemAtIndexPath:indexPath];
-    }
     DDPageModel *model = _presenter.cellModels[indexPath.row];
-    
     DDPageBarItem *barItem = [collectionView dequeueReusableCellWithReuseIdentifier:@"title" forIndexPath:indexPath];
-    
     barItem.titleLabel.textColor = model.currentColor;
     barItem.titleLabel.font = _titleFont;
-    
     barItem.titleLabel.text = model.viewController.title;
-    if (_selectedIndex == indexPath.row) {
-        barItem.titleLabel.highlighted = YES;
-    }
     
     return barItem;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row < 0 || indexPath.row >= _presenter.cellModels.count) {
-        return NO;
-    }
-    
-    BOOL flag = YES;
-    UIViewController *vc = _presenter.cellModels[indexPath.row];
-    if ([_delegate respondsToSelector:@selector(slideSegment:shouldSelectViewController:)]) {
-        flag = [_delegate slideSegment:collectionView shouldSelectViewController:vc];
-    }
-    return flag;
-}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < 0 || indexPath.row >= _presenter.cellModels.count) {
         return;
     }
-    UIViewController *vc = _presenter.cellModels[indexPath.row];
-
-    if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:indexPath:)]) {
-        [_delegate slideSegment:collectionView didSelectedViewController:vc indexPath:indexPath];
+    if (_selectedIndex != indexPath.row) {
+        _selectedIndex = indexPath.row;
+    }
+    DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
+    UIViewController *toSelectController = pageModel.viewController;
+    if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
+        [_delegate pageBar:_pageBar didSelectedViewController:toSelectController scrollToIndex:indexPath.row];
     }
 }
 
-- (void)reloadData {
-    [_pageBar reloadData];
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == _pageBar) return;
-    
+- (void)refreshPageBarFromContentView:(UIScrollView *)scrollView {
+       
     CGFloat percent = scrollView.contentOffset.x / scrollView.contentSize.width;
     NSInteger index = round(percent * _presenter.cellModels.count);
     if (index >= 0 && index < _presenter.cellModels.count)
@@ -212,7 +183,7 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     _startOffsetX = scrollView.contentOffset.x;
 }
-//
+
 - (void)setSelectedIndex:(NSInteger)selectedIndex
 {
     if (_selectedIndex == selectedIndex) return;
@@ -221,6 +192,7 @@
     
     DDPageModel *targetModel = _presenter.cellModels[selectedIndex];
     targetModel.currentColor = _selectedTitleColor;
+   
     if (_selectedIndex >=0 && _selectedIndex < _presenter.cellModels.count) {
         DDPageModel *originalModel = _presenter.cellModels[_selectedIndex];
         originalModel.currentColor = _titleColor;
@@ -228,10 +200,12 @@
     
     [_pageBar reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:selectedIndex inSection:0],[NSIndexPath indexPathForRow:_selectedIndex inSection:0]]];
     
-    
-    NSParameterAssert(selectedIndex >= 0 && selectedIndex < _presenter.cellModels.count);
-    
     _selectedIndex = selectedIndex;
+    
+}
+
+- (void)reloadData {
+    [_pageBar reloadData];
 }
 
 

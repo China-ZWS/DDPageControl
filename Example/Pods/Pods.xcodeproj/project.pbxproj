@@ -7,34 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D4973F4EE9DCFEBE01FF9D40F4037F /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = A435396B756BADA1B789E86D263B67EF /* ReplaceMe.m */; };
-		10E5357ECEB1801C15BA79129D8DC862 /* DDPageBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 16697F683192D1ACF0F3C6E7E8119917 /* DDPageBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		112E9B3F783E749FE49F1D61870F48EA /* DDPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E576A13654B66664B04DCDFC6D2E59 /* DDPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1291FC56295672EFD4244A7020E1D681 /* DDPageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB00546793D6A91983CCAFD8724B1CFA /* DDPageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		208F434B12B6CA4056D48D1E476DDC0F /* DDPageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 821380D9DAD5A4BE65A7F73D7AD5FBA2 /* DDPageBarManager.m */; };
-		29096E335DA116DC9E9FFA6A8EEB6D66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		10BF2BB4E2F9434F5F74FB82BAC83995 /* DDPageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 951040E0A997986AEC1ACAA5715C0F94 /* DDPageBarManager.m */; };
+		1AFEA20B26D1D757620F8D7DCF750273 /* DDPageDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E3818609E1F4B4F8EAE66CBF84C6BC /* DDPageDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		242EB57E2AE1A15CFA30779B159BD220 /* DDPageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 324FFA81159824B2A0DBF36BFD7BDC19 /* DDPageModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EA838ADD3BB6C4ED6EB0B545A8D0ACD /* Pods-DDPageControl_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7EAC7EAF63F1D284E326F886D084466 /* Pods-DDPageControl_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F6546FE7EDC114923C01832486B2B63 /* DDPageContentPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 318A861C244C5D9451F787C6A88B7AC1 /* DDPageContentPresenter.m */; };
-		4168F2B5C7B2D34D4ED9253B59665179 /* DDPageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C4774E3C200D761E5307FD5EBB895ADD /* DDPageModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43F00A1C3D511F09F05384EDBDE596A4 /* DDPageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB08D239F26D5CCC1067CB4BD67211D2 /* DDPageControl-dummy.m */; };
+		34CF9730032A365952CF28F03C11319A /* DDPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3017EEE272F768E01E4858C4A068CAF5 /* DDPageContentView.m */; };
+		36F08AD0A6A88F80E8B48CA24A7D5E68 /* DDPageBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F81D4C5F24D0DD5D64F374161A9707 /* DDPageBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3772DF3C9356FC97A2C3CA0CB1D7E676 /* DDPageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB08D239F26D5CCC1067CB4BD67211D2 /* DDPageControl-dummy.m */; };
 		449D47E9DFFDCE4F14877A6699829180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		5129FD6802512D17615D1108BEED95BD /* DDPageContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D2F23F096CAF55BC6D9E1C63583E70 /* DDPageContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DB15D1A897B2FEA172526094243FC75 /* DDPageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 68067B21CB20FFBA8E4F2868D25640A8 /* DDPageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EA467B7822747415763854AD71B3FA8 /* DDPagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F74A0A3F89F74DA7A6A8B19D1F8CE1F7 /* DDPagePresenter.m */; };
+		54D16103835AC4CF8D29F14CEF961EF6 /* DDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F67C6301041495C27D66F655504CF62B /* DDPageControl.m */; };
+		5847B47C5666C84923F380A9A5B09A53 /* DDPageContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E62EA5A50ADFB6682F93A97BB74B69D2 /* DDPageContentManager.m */; };
+		5A4A83A3C8086DFE9149A95F1D558E99 /* DDPageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB00546793D6A91983CCAFD8724B1CFA /* DDPageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD57352E88B3CC361FA3F8E3979D37D /* DDPageBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4089C6AD3D967F8D306E52EBC448A031 /* DDPageBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6831C4B8C047262968109784C4129858 /* DDPageContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C091F1E01B64D7D23DC5010EF5A901 /* DDPageContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A87A8E12F304A8D643636B4ADD81BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		6AC4FDA0C793E440BD1AB36950C9E406 /* DDPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD826B2E4EF78E91742CACC49FB19A /* DDPageModel.m */; };
-		6EE2E9AA01AB3FE6BDE70DF14C3EFE44 /* DDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A9773658AF27AAFA5895BBCA98538213 /* DDPageControl.m */; };
-		721DC2435150AAB8F40E61D4EC21276B /* DDPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493E578D270EEA2513F3059E14B917F0 /* DDPageContentView.m */; };
 		7359D9198C3575D8ACA5B2E70830D558 /* Pods-DDPageControl_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC86FF698F7CA2BEF0CD26F610B4FC9 /* Pods-DDPageControl_Tests-dummy.m */; };
-		808DD215E1F82E67781FFCD29676648C /* DDPageDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 61AA8E3D3859CEB4A029E7D9DC5CBBF4 /* DDPageDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9391B337CAD0BEA91C6AD4E299436BE7 /* DDPageBarPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 785535F705FD9BDBE34A4EB7A6AE95F1 /* DDPageBarPresenter.m */; };
-		B93992951AEE63E4A72B1C8F896D7581 /* DDPageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E9D575CA4EC205604801CC51E0DF84 /* DDPageBar.m */; };
-		BEF9379F35CF46E42306828FFC51C8BE /* DDPageContentPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = B8974371CDF5CA6ECB07479D2DDA9268 /* DDPageContentPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFDF59C4750C689F909A03AFF5DA71EB /* DDPageBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 737EBA34AF86DF6EE3DC280A4AC48AC0 /* DDPageBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B755FDF1FDFE010F3C0100E382D83AF /* DDPageContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DF40B2B755F64E45B311DFC67FE1FE /* DDPageContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82D0EAB5EDAC18629D2DA6EC84DA1538 /* DDPagePresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7676E90351C3BFCDA2145CF200732737 /* DDPagePresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F4A33412B2B61FB8C1B09EB1FBFFD62 /* DDPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 71FA1429B31ADE420D93E3A88127E19F /* DDPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B57E47F8BE8D5B3850625F43FB051DF /* DDPageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D85F769BF3FEF94B6B6A069B4F620B89 /* DDPageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3162F71687BD226CC3EB595F70AFCFA /* DDPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72182CA28B116F68BB1F47328C212BC9 /* DDPageModel.m */; };
+		CD8CC7E2B38C58F4D7627311F02E5CEB /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5967498FBB5C847F216AF2509F1FFFF9 /* ReplaceMe.m */; };
 		DB9BB4EE8D0A10ED872C78DB68C2373D /* Pods-DDPageControl_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87029442FA4867744E25DC11F6DCC052 /* Pods-DDPageControl_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6EA4C1DEE69D3F5A0251909F9B93995 /* DDPageContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6F9DA6421DB6F052DB937D11F80A1D /* DDPageContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2A7BB351845B09F1B7E7EAFE4EF216C /* DDPageBarPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 197A3E525C927537B9964B25AC8255EA /* DDPageBarPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2ACF99BC5C941A8E87882000D518820 /* Pods-DDPageControl_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D14DF98BFBD4D2B162A77E63D93FE4 /* Pods-DDPageControl_Example-dummy.m */; };
-		FB2D9FBDA36FBA7B52B6B1E7B9D7364C /* DDPageContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4548F23385B2930E0B2F618DC3C55F /* DDPageContentManager.m */; };
+		F521BD04F4EA2FBBB832F903C0AB1AA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		FB5C322E1FAFD8C15A8DB0A90D25AC21 /* DDPageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B6F26ED4FB8009151C4F86B9307838 /* DDPageBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +40,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B199B0C82A11C1B5B2049E4C06BBF13;
+			remoteGlobalIDString = D8EF3F6729760165F231A9C27CD39A14;
 			remoteInfo = DDPageControl;
 		};
 /* End PBXContainerItemProxy section */
@@ -51,61 +49,59 @@
 		01EE9287A78669BA74547E4BED17044B /* Pods-DDPageControl_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDPageControl_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		08CA8985AEFCB70206AED214AD1C4127 /* Pods-DDPageControl_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDPageControl_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0E3404A1F3BEE12C90C0E5AD747CE532 /* Pods-DDPageControl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDPageControl_Example.release.xcconfig"; sourceTree = "<group>"; };
-		16697F683192D1ACF0F3C6E7E8119917 /* DDPageBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageBar.h; sourceTree = "<group>"; };
 		18756E299AC3FDC3D629C3A86173C978 /* Pods-DDPageControl_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDPageControl_Example-resources.sh"; sourceTree = "<group>"; };
-		197A3E525C927537B9964B25AC8255EA /* DDPageBarPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageBarPresenter.h; sourceTree = "<group>"; };
 		1A2A9154754DD97BB2501AE70EF20E7B /* Pods-DDPageControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDPageControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		22DF40B2B755F64E45B311DFC67FE1FE /* DDPageContentManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageContentManager.h; sourceTree = "<group>"; };
+		28B6F26ED4FB8009151C4F86B9307838 /* DDPageBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageBar.m; sourceTree = "<group>"; };
 		28D9F78874E02F92D23D4CECD96AFF8F /* Pods-DDPageControl_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDPageControl_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		2EFD826B2E4EF78E91742CACC49FB19A /* DDPageModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageModel.m; sourceTree = "<group>"; };
-		318A861C244C5D9451F787C6A88B7AC1 /* DDPageContentPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentPresenter.m; sourceTree = "<group>"; };
-		493E578D270EEA2513F3059E14B917F0 /* DDPageContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentView.m; sourceTree = "<group>"; };
-		49E576A13654B66664B04DCDFC6D2E59 /* DDPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageControl.h; sourceTree = "<group>"; };
+		3017EEE272F768E01E4858C4A068CAF5 /* DDPageContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentView.m; sourceTree = "<group>"; };
+		324FFA81159824B2A0DBF36BFD7BDC19 /* DDPageModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageModel.h; sourceTree = "<group>"; };
+		37C091F1E01B64D7D23DC5010EF5A901 /* DDPageContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageContentView.h; sourceTree = "<group>"; };
+		4089C6AD3D967F8D306E52EBC448A031 /* DDPageBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageBar.h; sourceTree = "<group>"; };
 		4ABB63540DFA342BEE18393E8CA78B02 /* Pods-DDPageControl_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDPageControl_Tests-resources.sh"; sourceTree = "<group>"; };
+		5967498FBB5C847F216AF2509F1FFFF9 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DDPageControl.xcconfig; sourceTree = "<group>"; };
-		61AA8E3D3859CEB4A029E7D9DC5CBBF4 /* DDPageDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageDefine.h; sourceTree = "<group>"; };
 		64422C252D11B7DB01E7C853F5CD8B79 /* Pods-DDPageControl_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDPageControl_Example-frameworks.sh"; sourceTree = "<group>"; };
-		68067B21CB20FFBA8E4F2868D25640A8 /* DDPageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageProtocol.h; sourceTree = "<group>"; };
 		6B5B2B7205C97248CA10337A8FAC3BEE /* DDPageControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DDPageControl.modulemap; sourceTree = "<group>"; };
-		6F4548F23385B2930E0B2F618DC3C55F /* DDPageContentManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentManager.m; sourceTree = "<group>"; };
-		737EBA34AF86DF6EE3DC280A4AC48AC0 /* DDPageBarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageBarManager.h; sourceTree = "<group>"; };
-		785535F705FD9BDBE34A4EB7A6AE95F1 /* DDPageBarPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageBarPresenter.m; sourceTree = "<group>"; };
-		821380D9DAD5A4BE65A7F73D7AD5FBA2 /* DDPageBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageBarManager.m; sourceTree = "<group>"; };
+		71FA1429B31ADE420D93E3A88127E19F /* DDPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageControl.h; sourceTree = "<group>"; };
+		72182CA28B116F68BB1F47328C212BC9 /* DDPageModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageModel.m; sourceTree = "<group>"; };
+		7676E90351C3BFCDA2145CF200732737 /* DDPagePresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPagePresenter.h; sourceTree = "<group>"; };
 		83940DA29A26E1F67FCC9B902766B60F /* DDPageControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPageControl-prefix.pch"; sourceTree = "<group>"; };
 		83ADA739526F4BAE88B15AAC1FFFE82A /* Pods-DDPageControl_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDPageControl_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		86C543A3575EA04D7CF1D71AAAD2879E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87029442FA4867744E25DC11F6DCC052 /* Pods-DDPageControl_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDPageControl_Example-umbrella.h"; sourceTree = "<group>"; };
-		87D2F23F096CAF55BC6D9E1C63583E70 /* DDPageContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageContentView.h; sourceTree = "<group>"; };
 		8A9CC0A68981251E37D6DBA9B1BBB0AE /* Pods-DDPageControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDPageControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		951040E0A997986AEC1ACAA5715C0F94 /* DDPageBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageBarManager.m; sourceTree = "<group>"; };
 		9E18F60B19CEE8B5B275E9A3A91A6063 /* Pods-DDPageControl_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DDPageControl_Example.modulemap"; sourceTree = "<group>"; };
 		A0F654569ED90B955974C2A3600402B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A435396B756BADA1B789E86D263B67EF /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		A557CE1C4EF2A869C0C405DFE1F6B82C /* Pods-DDPageControl_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDPageControl_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		A9773658AF27AAFA5895BBCA98538213 /* DDPageControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageControl.m; sourceTree = "<group>"; };
 		B4489FCE1FA5F14F26A312F5BF7127F7 /* Pods_DDPageControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DDPageControl_Example.framework; path = "Pods-DDPageControl_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74EB783C1E6179525E4244B2492A620 /* DDPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DDPageControl.framework; path = DDPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8974371CDF5CA6ECB07479D2DDA9268 /* DDPageContentPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageContentPresenter.h; sourceTree = "<group>"; };
+		B9E3818609E1F4B4F8EAE66CBF84C6BC /* DDPageDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageDefine.h; sourceTree = "<group>"; };
 		BCC86FF698F7CA2BEF0CD26F610B4FC9 /* Pods-DDPageControl_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDPageControl_Tests-dummy.m"; sourceTree = "<group>"; };
 		C0D14DF98BFBD4D2B162A77E63D93FE4 /* Pods-DDPageControl_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDPageControl_Example-dummy.m"; sourceTree = "<group>"; };
-		C4774E3C200D761E5307FD5EBB895ADD /* DDPageModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageModel.h; sourceTree = "<group>"; };
+		C8F81D4C5F24D0DD5D64F374161A9707 /* DDPageBarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageBarManager.h; sourceTree = "<group>"; };
 		CB00546793D6A91983CCAFD8724B1CFA /* DDPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPageControl-umbrella.h"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D07CA6819675D294C1073B04E33DC565 /* Pods-DDPageControl_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DDPageControl_Tests.modulemap"; sourceTree = "<group>"; };
 		D7EAC7EAF63F1D284E326F886D084466 /* Pods-DDPageControl_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDPageControl_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D85F769BF3FEF94B6B6A069B4F620B89 /* DDPageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageProtocol.h; sourceTree = "<group>"; };
 		DB08D239F26D5CCC1067CB4BD67211D2 /* DDPageControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DDPageControl-dummy.m"; sourceTree = "<group>"; };
+		E62EA5A50ADFB6682F93A97BB74B69D2 /* DDPageContentManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentManager.m; sourceTree = "<group>"; };
 		E71FA2DB4585EE23496A0DDD20862E02 /* Pods-DDPageControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDPageControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EE6F9DA6421DB6F052DB937D11F80A1D /* DDPageContentManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageContentManager.h; sourceTree = "<group>"; };
 		EF5056CC1E20642EA564C4EBD824C729 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6E9D575CA4EC205604801CC51E0DF84 /* DDPageBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageBar.m; sourceTree = "<group>"; };
+		F67C6301041495C27D66F655504CF62B /* DDPageControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageControl.m; sourceTree = "<group>"; };
+		F74A0A3F89F74DA7A6A8B19D1F8CE1F7 /* DDPagePresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPagePresenter.m; sourceTree = "<group>"; };
 		FFFB9D14C444AE7439F31416DA315D11 /* Pods_DDPageControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DDPageControl_Tests.framework; path = "Pods-DDPageControl_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		73238DD5567C0EEF9231DDA76EBF3F7F /* Frameworks */ = {
+		2FE641A84964752A8544E3EB6E8DDAC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29096E335DA116DC9E9FFA6A8EEB6D66 /* Foundation.framework in Frameworks */,
+				F521BD04F4EA2FBBB832F903C0AB1AA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,26 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		002CD9E86C99DA1007D92C9B8809A074 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				16697F683192D1ACF0F3C6E7E8119917 /* DDPageBar.h */,
-				F6E9D575CA4EC205604801CC51E0DF84 /* DDPageBar.m */,
-				87D2F23F096CAF55BC6D9E1C63583E70 /* DDPageContentView.h */,
-				493E578D270EEA2513F3059E14B917F0 /* DDPageContentView.m */,
-				49E576A13654B66664B04DCDFC6D2E59 /* DDPageControl.h */,
-				A9773658AF27AAFA5895BBCA98538213 /* DDPageControl.m */,
-				61AA8E3D3859CEB4A029E7D9DC5CBBF4 /* DDPageDefine.h */,
-				C4774E3C200D761E5307FD5EBB895ADD /* DDPageModel.h */,
-				2EFD826B2E4EF78E91742CACC49FB19A /* DDPageModel.m */,
-				68067B21CB20FFBA8E4F2868D25640A8 /* DDPageProtocol.h */,
-				A435396B756BADA1B789E86D263B67EF /* ReplaceMe.m */,
-				A33E8F2343A0D6E839C8DE7BD76F1E74 /* Other */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		0D6F96E0EC917B0777D439397C392B90 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +135,44 @@
 		1366E08A975F98BA9375712F1D9604AE /* DDPageControl */ = {
 			isa = PBXGroup;
 			children = (
-				002CD9E86C99DA1007D92C9B8809A074 /* Classes */,
+				6189CA38EA056EF284BF6260738A73A5 /* Classes */,
 			);
 			name = DDPageControl;
 			path = DDPageControl;
+			sourceTree = "<group>";
+		};
+		13832828C50CA4F489FAB28483286473 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C8F81D4C5F24D0DD5D64F374161A9707 /* DDPageBarManager.h */,
+				951040E0A997986AEC1ACAA5715C0F94 /* DDPageBarManager.m */,
+				22DF40B2B755F64E45B311DFC67FE1FE /* DDPageContentManager.h */,
+				E62EA5A50ADFB6682F93A97BB74B69D2 /* DDPageContentManager.m */,
+				7676E90351C3BFCDA2145CF200732737 /* DDPagePresenter.h */,
+				F74A0A3F89F74DA7A6A8B19D1F8CE1F7 /* DDPagePresenter.m */,
+			);
+			name = Other;
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6189CA38EA056EF284BF6260738A73A5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4089C6AD3D967F8D306E52EBC448A031 /* DDPageBar.h */,
+				28B6F26ED4FB8009151C4F86B9307838 /* DDPageBar.m */,
+				37C091F1E01B64D7D23DC5010EF5A901 /* DDPageContentView.h */,
+				3017EEE272F768E01E4858C4A068CAF5 /* DDPageContentView.m */,
+				71FA1429B31ADE420D93E3A88127E19F /* DDPageControl.h */,
+				F67C6301041495C27D66F655504CF62B /* DDPageControl.m */,
+				B9E3818609E1F4B4F8EAE66CBF84C6BC /* DDPageDefine.h */,
+				324FFA81159824B2A0DBF36BFD7BDC19 /* DDPageModel.h */,
+				72182CA28B116F68BB1F47328C212BC9 /* DDPageModel.m */,
+				D85F769BF3FEF94B6B6A069B4F620B89 /* DDPageProtocol.h */,
+				5967498FBB5C847F216AF2509F1FFFF9 /* ReplaceMe.m */,
+				13832828C50CA4F489FAB28483286473 /* Other */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -214,22 +224,6 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/DDPageControl";
-			sourceTree = "<group>";
-		};
-		A33E8F2343A0D6E839C8DE7BD76F1E74 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				737EBA34AF86DF6EE3DC280A4AC48AC0 /* DDPageBarManager.h */,
-				821380D9DAD5A4BE65A7F73D7AD5FBA2 /* DDPageBarManager.m */,
-				197A3E525C927537B9964B25AC8255EA /* DDPageBarPresenter.h */,
-				785535F705FD9BDBE34A4EB7A6AE95F1 /* DDPageBarPresenter.m */,
-				EE6F9DA6421DB6F052DB937D11F80A1D /* DDPageContentManager.h */,
-				6F4548F23385B2930E0B2F618DC3C55F /* DDPageContentManager.m */,
-				B8974371CDF5CA6ECB07479D2DDA9268 /* DDPageContentPresenter.h */,
-				318A861C244C5D9451F787C6A88B7AC1 /* DDPageContentPresenter.m */,
-			);
-			name = Other;
-			path = Other;
 			sourceTree = "<group>";
 		};
 		B288D3E123CCF3ADA81B495848842A2C /* Products */ = {
@@ -290,21 +284,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4D0554CCFF9A5F315CD9BD5952584FE6 /* Headers */ = {
+		392E25D231E5DCAF1E177AB9DDB79ABC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E5357ECEB1801C15BA79129D8DC862 /* DDPageBar.h in Headers */,
-				CFDF59C4750C689F909A03AFF5DA71EB /* DDPageBarManager.h in Headers */,
-				F2A7BB351845B09F1B7E7EAFE4EF216C /* DDPageBarPresenter.h in Headers */,
-				E6EA4C1DEE69D3F5A0251909F9B93995 /* DDPageContentManager.h in Headers */,
-				BEF9379F35CF46E42306828FFC51C8BE /* DDPageContentPresenter.h in Headers */,
-				5129FD6802512D17615D1108BEED95BD /* DDPageContentView.h in Headers */,
-				1291FC56295672EFD4244A7020E1D681 /* DDPageControl-umbrella.h in Headers */,
-				112E9B3F783E749FE49F1D61870F48EA /* DDPageControl.h in Headers */,
-				808DD215E1F82E67781FFCD29676648C /* DDPageDefine.h in Headers */,
-				4168F2B5C7B2D34D4ED9253B59665179 /* DDPageModel.h in Headers */,
-				5DB15D1A897B2FEA172526094243FC75 /* DDPageProtocol.h in Headers */,
+				5AD57352E88B3CC361FA3F8E3979D37D /* DDPageBar.h in Headers */,
+				36F08AD0A6A88F80E8B48CA24A7D5E68 /* DDPageBarManager.h in Headers */,
+				7B755FDF1FDFE010F3C0100E382D83AF /* DDPageContentManager.h in Headers */,
+				6831C4B8C047262968109784C4129858 /* DDPageContentView.h in Headers */,
+				5A4A83A3C8086DFE9149A95F1D558E99 /* DDPageControl-umbrella.h in Headers */,
+				8F4A33412B2B61FB8C1B09EB1FBFFD62 /* DDPageControl.h in Headers */,
+				1AFEA20B26D1D757620F8D7DCF750273 /* DDPageDefine.h in Headers */,
+				242EB57E2AE1A15CFA30779B159BD220 /* DDPageModel.h in Headers */,
+				82D0EAB5EDAC18629D2DA6EC84DA1538 /* DDPagePresenter.h in Headers */,
+				9B57E47F8BE8D5B3850625F43FB051DF /* DDPageProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,23 +337,6 @@
 			productReference = FFFB9D14C444AE7439F31416DA315D11 /* Pods_DDPageControl_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4B199B0C82A11C1B5B2049E4C06BBF13 /* DDPageControl */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50B3FE80D9C75B51D82A46A6350E1395 /* Build configuration list for PBXNativeTarget "DDPageControl" */;
-			buildPhases = (
-				6C262FFF27AB3AB2EA348D10D85F0365 /* Sources */,
-				73238DD5567C0EEF9231DDA76EBF3F7F /* Frameworks */,
-				4D0554CCFF9A5F315CD9BD5952584FE6 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DDPageControl;
-			productName = DDPageControl;
-			productReference = B74EB783C1E6179525E4244B2492A620 /* DDPageControl.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		A5396A84A4F8E18B528B798F9A98CF34 /* Pods-DDPageControl_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51902DC8EDC6344260D6605F8B4FC15A /* Build configuration list for PBXNativeTarget "Pods-DDPageControl_Example" */;
@@ -377,6 +353,23 @@
 			name = "Pods-DDPageControl_Example";
 			productName = "Pods-DDPageControl_Example";
 			productReference = B4489FCE1FA5F14F26A312F5BF7127F7 /* Pods_DDPageControl_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D8EF3F6729760165F231A9C27CD39A14 /* DDPageControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBACAA9549AB0184BA1BA13C77F4994 /* Build configuration list for PBXNativeTarget "DDPageControl" */;
+			buildPhases = (
+				376D3EC9E176A16F1886BD4D0F2EB38D /* Sources */,
+				2FE641A84964752A8544E3EB6E8DDAC9 /* Frameworks */,
+				392E25D231E5DCAF1E177AB9DDB79ABC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDPageControl;
+			productName = DDPageControl;
+			productReference = B74EB783C1E6179525E4244B2492A620 /* DDPageControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -400,7 +393,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B199B0C82A11C1B5B2049E4C06BBF13 /* DDPageControl */,
+				D8EF3F6729760165F231A9C27CD39A14 /* DDPageControl */,
 				A5396A84A4F8E18B528B798F9A98CF34 /* Pods-DDPageControl_Example */,
 				39EBE3D3F2FF9C3879D2E2998BB30189 /* Pods-DDPageControl_Tests */,
 			);
@@ -408,20 +401,19 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6C262FFF27AB3AB2EA348D10D85F0365 /* Sources */ = {
+		376D3EC9E176A16F1886BD4D0F2EB38D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B93992951AEE63E4A72B1C8F896D7581 /* DDPageBar.m in Sources */,
-				208F434B12B6CA4056D48D1E476DDC0F /* DDPageBarManager.m in Sources */,
-				9391B337CAD0BEA91C6AD4E299436BE7 /* DDPageBarPresenter.m in Sources */,
-				FB2D9FBDA36FBA7B52B6B1E7B9D7364C /* DDPageContentManager.m in Sources */,
-				2F6546FE7EDC114923C01832486B2B63 /* DDPageContentPresenter.m in Sources */,
-				721DC2435150AAB8F40E61D4EC21276B /* DDPageContentView.m in Sources */,
-				43F00A1C3D511F09F05384EDBDE596A4 /* DDPageControl-dummy.m in Sources */,
-				6EE2E9AA01AB3FE6BDE70DF14C3EFE44 /* DDPageControl.m in Sources */,
-				6AC4FDA0C793E440BD1AB36950C9E406 /* DDPageModel.m in Sources */,
-				04D4973F4EE9DCFEBE01FF9D40F4037F /* ReplaceMe.m in Sources */,
+				FB5C322E1FAFD8C15A8DB0A90D25AC21 /* DDPageBar.m in Sources */,
+				10BF2BB4E2F9434F5F74FB82BAC83995 /* DDPageBarManager.m in Sources */,
+				5847B47C5666C84923F380A9A5B09A53 /* DDPageContentManager.m in Sources */,
+				34CF9730032A365952CF28F03C11319A /* DDPageContentView.m in Sources */,
+				3772DF3C9356FC97A2C3CA0CB1D7E676 /* DDPageControl-dummy.m in Sources */,
+				54D16103835AC4CF8D29F14CEF961EF6 /* DDPageControl.m in Sources */,
+				B3162F71687BD226CC3EB595F70AFCFA /* DDPageModel.m in Sources */,
+				4EA467B7822747415763854AD71B3FA8 /* DDPagePresenter.m in Sources */,
+				CD8CC7E2B38C58F4D7627311F02E5CEB /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,13 +439,13 @@
 		886D8A9A2DB903AA93778E992A86F9A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DDPageControl;
-			target = 4B199B0C82A11C1B5B2049E4C06BBF13 /* DDPageControl */;
+			target = D8EF3F6729760165F231A9C27CD39A14 /* DDPageControl */;
 			targetProxy = E8A725BADFD370F30319BCAC1D1351AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		18DB681F1D83B45018E0243972571B53 /* Debug */ = {
+		1A6CB7020347D3D62BEFBEBA2BD68DCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */;
 			buildSettings = {
@@ -461,7 +453,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -474,7 +466,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DDPageControl/DDPageControl.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = DDPageControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -482,7 +474,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		201617FF3E73882EA69A2695B7D0D0FB /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -673,7 +665,7 @@
 			};
 			name = Release;
 		};
-		D495C80681FB69AE7D3D9F548A90031B /* Release */ = {
+		DBE6834A9E7FAC9C9D2495114E355974 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */;
 			buildSettings = {
@@ -681,7 +673,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -694,7 +686,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DDPageControl/DDPageControl.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = DDPageControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -702,7 +694,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		FAB2C9DB7B8BB6154BB6549DD32A35A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -760,20 +752,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50B3FE80D9C75B51D82A46A6350E1395 /* Build configuration list for PBXNativeTarget "DDPageControl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18DB681F1D83B45018E0243972571B53 /* Debug */,
-				D495C80681FB69AE7D3D9F548A90031B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		51902DC8EDC6344260D6605F8B4FC15A /* Build configuration list for PBXNativeTarget "Pods-DDPageControl_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAB2C9DB7B8BB6154BB6549DD32A35A5 /* Debug */,
 				9A7AE4819EF15CE9C25A6A12A914C8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBACAA9549AB0184BA1BA13C77F4994 /* Build configuration list for PBXNativeTarget "DDPageControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE6834A9E7FAC9C9D2495114E355974 /* Debug */,
+				1A6CB7020347D3D62BEFBEBA2BD68DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

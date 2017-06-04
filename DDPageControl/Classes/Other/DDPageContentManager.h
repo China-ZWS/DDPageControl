@@ -10,25 +10,26 @@
 
 #import "DDPageContentView.h"
 
-#import "DDPageContentPresenter.h"
+#import "DDPagePresenter.h"
 
 @protocol DDPageContentManagerDelegate <NSObject>
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)contentViewDidScroll:(UIScrollView *)scrollView;
+
+- (void)contentView:(DDPageContentView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
 
 @end
 
 @interface DDPageContentManager : NSObject
 
 @property (nonatomic, readonly) DDPageContentView *contentView;               
-@property (nonatomic, readonly) DDPageContentPresenter *presenter;
 @property (nonatomic, assign) id<DDPageContentManagerDelegate> delegate;
+@property (nonatomic, strong) UIViewController *parentViewController;
 
-
-+ (instancetype)initWithPresenter:(DDPageContentPresenter *)presenter;
++ (instancetype)initWithPresenter:(DDPagePresenter *)presenter;
 
 - (void)setContentViewWithitemSize:(CGSize)itemSize;
 
-- (void)scrollToViewWithIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)contentViewToSelectIndex:(NSInteger)index animated:(BOOL)animated;
 
 @end

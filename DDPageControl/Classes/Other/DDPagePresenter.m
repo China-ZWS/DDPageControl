@@ -1,23 +1,23 @@
 //
-//  DDPageBarPresenter.m
+//  DDPagePresenter.m
 //  Pods
 //
 //  Created by 周文松 on 2017/6/3.
 //
 //
 
-#import "DDPageBarPresenter.h"
+#import "DDPagePresenter.h"
 
 /** 按钮之间的间距 */
 static CGFloat const DDPageTitleMargin = 20;
 
-@interface DDPageBarPresenter ()
+@interface DDPagePresenter ()
 
 @property (nonatomic, strong) NSMutableArray *cellModels;
 
 @end
 
-@implementation DDPageBarPresenter
+@implementation DDPagePresenter
 
 - (instancetype) init {
     if ((self = [super init])) {
@@ -26,7 +26,7 @@ static CGFloat const DDPageTitleMargin = 20;
     return self;
 }
 
-- (void)fetchDatasWithViewWidth:(CGFloat)viewWidth completionHandler:(dispatch_block_t)completionHandler {
+- (void)fetchDatasWithViewWidth:(CGFloat)viewWidth controllers:(NSArray *)controllers completionHandler:(dispatch_block_t)completionHandler {
 
     // 如果 _pageModels 有值清空
     if (_cellModels && _cellModels.count) [_cellModels removeAllObjects];
@@ -34,7 +34,7 @@ static CGFloat const DDPageTitleMargin = 20;
     __block CGFloat maxTextSizeWidth = 0;
 
     // 计算所有按钮的文字宽度
-    [_controllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [controllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIViewController *vc = (UIViewController *)obj;
         CGFloat tempWidth = [self getSizeWithText:vc.title font:_titleFont] + DDPageTitleMargin;
         DDPageModel *model = DDPageModel.new;
@@ -70,11 +70,14 @@ static CGFloat const DDPageTitleMargin = 20;
         }
     }
     
-    if ([_manager respondsToSelector:@selector(reloadData)]) {
-        [_manager reloadData];
-    }
-
     completionHandler();
+
+    if ([_pageBarManager respondsToSelector:@selector(reloadData)]) {
+        [_pageBarManager reloadData];
+    }
+    if ([_contentViewManager respondsToSelector:@selector(reloadData)]) {
+        [_contentViewManager reloadData];
+    }
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  DDPageBarPresenter.h
+//  DDPagePresenter.h
 //  Pods
 //
 //  Created by 周文松 on 2017/6/3.
@@ -17,18 +17,24 @@
 
 @end
 
-@interface DDPageBarPresenter : NSObject
+@protocol DDPageContentViewPresenterDelegate <NSObject>
+
+- (void)reloadData;
+
+@end
+
+@interface DDPagePresenter : NSObject
 
 @property (nonatomic, readonly) NSArray <DDPageModel *>*cellModels;
-@property (nonatomic, assign) id<DDPageBarPresenterDelegate>manager;
+@property (nonatomic, assign) id<DDPageBarPresenterDelegate>pageBarManager;
+@property (nonatomic, assign) id<DDPageContentViewPresenterDelegate>contentViewManager;
 
-@property (nonatomic, strong) NSArray *controllers;              //!< VC集合
 @property (nonatomic, assign) NSInteger defaultSelected;
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *selectedTitleColor;
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *scrollLineColor;
 
-- (void)fetchDatasWithViewWidth:(CGFloat)viewWidth completionHandler:(dispatch_block_t)completionHandler;
+- (void)fetchDatasWithViewWidth:(CGFloat)viewWidth controllers:(NSArray *)controllers completionHandler:(dispatch_block_t)completionHandler;
 
 @end

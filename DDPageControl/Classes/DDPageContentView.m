@@ -20,7 +20,7 @@
 {
     if ((self = [super initWithFrame:frame collectionViewLayout:layout])) {
         
-        self.backgroundColor = DDPageWhiteColor(1);
+        self.backgroundColor = [UIColor whiteColor];
         self.showsHorizontalScrollIndicator = NO;
         self.pagingEnabled = YES;
         self.bounces = NO;

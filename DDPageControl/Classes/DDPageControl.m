@@ -16,12 +16,20 @@
 
 
 
+
 @interface DDPageControl () <DDPageBarManagerDelegate,DDPageContentManagerDelegate>
 
 @property (nonatomic, strong) DDPageBarManager *barManager;
 @property (nonatomic, strong) DDPageContentManager *contentManager;
+@property (nonatomic, strong) DDPagePresenter *presenter;
+
+- (void)dd_configuration;
+- (void)dd_addUI;
+- (void)dd_fetchData;
+- (void)dd_reset;
 
 @end
+
 
 @implementation DDPageControl
 
@@ -60,26 +68,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configuration];
-    [self addUI];
-    [self reloadData];
+    [self dd_configuration];
+    [self dd_addUI];
+    [self dd_fetchData];
+    [self dd_reset];
+
 }
 
-- (void)configuration {
-    DDPageBarPresenter *barPresenter = DDPageBarPresenter.new;
-    barPresenter.controllers = _controllers;
-    barPresenter.titleFont = _titleFont;
-    _barManager = [DDPageBarManager initWithPresenter:barPresenter];
+- (void)dd_configuration {
+    
+    _presenter = DDPagePresenter.new;
+    _presenter.titleFont = _titleFont;
+ 
+    _barManager = [DDPageBarManager initWithPresenter:_presenter];
     _barManager.selectedTitleColor = _selectedTitleColor;
     _barManager.titleFont = _titleFont;
     _barManager.titleColor = _titleColor;
     _barManager.delegate = self;
     
-    _contentManager = [DDPageContentManager initWithPresenter:DDPageContentPresenter.new];
+    _contentManager = [DDPageContentManager initWithPresenter:_presenter];
     _contentManager.delegate = self;
 }
 
-- (void)addUI {
+- (void)dd_addUI {
     
     _barManager.pageBar.frame = _barFrame;
     [self.view addSubview:_barManager.pageBar];
@@ -89,52 +100,68 @@
     _contentManager.contentView.scrollEnabled = _scrollEnabled;
     _contentManager.contentView.frame = CGRectMake(0, CGRectGetHeight(_barFrame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetHeight(_barFrame));
     [_contentManager setContentViewWithitemSize:_contentManager.contentView.frame.size];
+    _contentManager.parentViewController = self;
 }
 
-- (void)reloadData {
+- (void)dd_fetchData {
+  
     if (!_controllers.count) return;
     
-    [_barManager.presenter  fetchDatasWithViewWidth:self.view.frame.size.width completionHandler:^{
+    [_presenter  fetchDatasWithViewWidth:self.view.frame.size.width controllers:_controllers completionHandler:^{
         CGRect rect = _barManager.indicatorLayer.frame;
-        DDPageModel *model = _barManager.presenter.cellModels.firstObject;
+        DDPageModel *model = _presenter.cellModels.firstObject;
         rect.size.width = model.originalItemWidth - 20;
         rect.origin.x = 10;
         _barManager.indicatorLayer.frame = rect;
         _barManager.indicatorLayer.backgroundColor = _scrollLineColor;
     }];
-    [_contentManager.presenter fetchControllersWithControllers:_controllers completionHandler:^{
-    }];
-    [self reset];
 }
 
-- (void)reset {
-    NSLog(@"%zd",_defaultSelected);
-    [self scrollToViewWithIndex:_defaultSelected animated:NO];
+- (void)dd_reset {
+    
+    if (!_controllers.count) return;
+    if (_defaultSelected >= _controllers.count) {
+        // 越界处理
+        _defaultSelected = _controllers.count - 1;
+    }
+    if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
+        [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
+    }
+    
+    //  代码控制是不会启动懒加载的
+    [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];
 }
 
-- (void)scrollToViewWithIndex:(NSInteger)index animated:(BOOL)animated {
-    [_contentManager scrollToViewWithIndex:index animated:animated];
+- (void)reloadData {
+    [self dd_fetchData];
+    [self dd_reset];
 }
 
 #pragma mark - DDPageBarManagerDelegate
+#pragma mark  点击pageBar 触发
 
-- (void)slideSegment:(UICollectionView *)segmentBar didSelectedViewController:(UIViewController *)viewController indexPath:(NSIndexPath *)indexPath {
-    [self scrollToViewWithIndex:indexPath.row animated:YES];
-}
-
-- (BOOL)slideSegment:(UICollectionView *)segmentBar shouldSelectViewController:(UIViewController *)viewController {
-    BOOL flag = YES;
-    if ([_delegate respondsToSelector:@selector(slideSegment:shouldSelectViewController:)]) {
-        flag =   [_delegate slideSegment:segmentBar shouldSelectViewController:viewController];
+- (void)pageBar:(DDPageBar *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
+    
+    if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
+        [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
     }
-    return flag;
+    [_contentManager contentViewToSelectIndex:scrollToIndex animated:YES];
 }
 
 #pragma mark - DDPageContentManagerDelegate
+#pragma mark 点击pageBarItem或者直接滑动contentView 都会触发
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [_barManager scrollViewDidScroll:scrollView];
+- (void)contentViewDidScroll:(UIScrollView *)scrollView {
+    [_barManager refreshPageBarFromContentView:scrollView];
 }
 
+#pragma mark contentView 懒加载触发
+
+- (void)contentView:(DDPageContentView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
+    
+    if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
+        [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
+    }
+}
 
 @end
