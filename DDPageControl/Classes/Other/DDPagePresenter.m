@@ -19,6 +19,10 @@ static CGFloat const DDPageTitleMargin = 20;
 
 @implementation DDPagePresenter
 
+- (void)dealloc {
+    NSLog(@"%@",self);
+}
+
 - (instancetype) init {
     if ((self = [super init])) {
         _cellModels = NSMutableArray.array;

@@ -34,6 +34,10 @@
 
 @implementation DDPageControl
 
+- (void)dealloc {
+    NSLog(@"222 %@",self);
+}
+
 - (void)configWithData {
     _scrollLineColor = [UIColor redColor];
     _titleColor = [UIColor blackColor];
@@ -104,7 +108,6 @@
     _contentManager.contentView.scrollEnabled = _scrollEnabled;
     _contentManager.contentView.frame = CGRectMake(0, CGRectGetHeight(_barFrame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetHeight(_barFrame));
     [_contentManager setContentViewWithitemSize:_contentManager.contentView.frame.size];
-    _contentManager.parentViewController = self;
 }
 
 - (void)dd_fetchData {
@@ -113,9 +116,9 @@
     
     [_presenter  fetchDatasWithViewWidth:self.view.frame.size.width controllers:_controllers completionHandler:^{
         CGRect rect = _barManager.indicatorLayer.frame;
-        DDPageModel *model = _presenter.cellModels.firstObject;
+        DDPageModel *model = _presenter.cellModels[_defaultSelected];
         rect.size.width = model.originalItemWidth - 20;
-        rect.origin.x = 10;
+        rect.origin.x = model.originalItemX + 10;
         _barManager.indicatorLayer.frame = rect;
         _barManager.indicatorLayer.backgroundColor = _scrollLineColor;
     }];
@@ -155,6 +158,7 @@
     if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
     }
+    _defaultSelected = scrollToIndex;
     [_contentManager contentViewToSelectIndex:scrollToIndex animated:YES];
 }
 

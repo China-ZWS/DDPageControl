@@ -24,7 +24,6 @@
 
 @property (nonatomic, readonly) DDPageContentView *contentView;               
 @property (nonatomic, assign) id<DDPageContentManagerDelegate> delegate;
-@property (nonatomic, strong) UIViewController *parentViewController;
 
 + (instancetype)initWithPresenter:(DDPagePresenter *)presenter;
 

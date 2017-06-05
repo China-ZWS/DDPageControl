@@ -21,6 +21,11 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 
 @implementation DDPageContentManager
 
+- (void)dealloc {
+    NSLog(@"%@",self);
+}
+
+
 + (instancetype)initWithPresenter:(DDPagePresenter *)presenter {
     return [[DDPageContentManager alloc] initWithPresenter:presenter];
 }

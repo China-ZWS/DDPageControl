@@ -23,6 +23,10 @@
 
 @implementation DDPageBarManager
 
+- (void)dealloc {
+    NSLog(@"%@",self);
+}
+
 + (instancetype)initWithPresenter:(DDPagePresenter *)presenter {
     return [[DDPageBarManager alloc] initWithPresenter:presenter];
 }
