@@ -83,21 +83,18 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"content_row = %zd",indexPath.row);
-    
-    static NSString *const identifier = @"DDPageContentViewCell";
     DDPageContentViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
     
-    
+    pageModel.viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
+    [cell.contentView addSubview:pageModel.viewController.view];
+
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(nonnull UICollectionViewCell *)cell forItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    NSLog(@"content_row = %zd",indexPath.row);
-
     DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
-    [pageModel.viewController.view removeFromSuperview];
-    
     if ([_delegate respondsToSelector:@selector(contentView:didEndDisplayingViewController:scrollToIndex:)]) {
         [_delegate contentView:collectionView didEndDisplayingViewController:pageModel.viewController scrollToIndex:indexPath.row];
     }
@@ -125,19 +122,17 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 }
 
 #pragma mark - 延迟加载关键
-#pragma tableView  滑动手离开屏幕
+#pragma tableView  滑动手离开屏幕 (如果是人为拖拽scrollView导致滚动完毕，才会调用这个方法）非惯性停止滑动
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (!decelerate) {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) { // 手指离开
         [self loadLodingForOnscreenRows];
     }
 }
 
-#pragma 惯性停止滑动
+#pragma 滚动完毕就会调用（如果是人为拖拽scrollView导致滚动完毕，才会调用这个方法）惯性停止滑动
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self loadLodingForOnscreenRows];
 }
 
@@ -150,12 +145,7 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
     if (index >= 0 && index < _presenter.cellModels.count)
     {
         DDPageModel *pageModel = _presenter.cellModels[index];
-        
-        DDPageContentViewCell *cell = (DDPageContentViewCell *)[_contentView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-        pageModel.viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
-        [cell.contentView addSubview:pageModel.viewController.view];
-
-        
+    
         if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
             [_delegate contentView:_contentView didSelectedViewController:pageModel.viewController scrollToIndex:index];
         }
@@ -165,7 +155,6 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 - (void)reloadData {
     [_contentView reloadData];
 }
-
 
 
 

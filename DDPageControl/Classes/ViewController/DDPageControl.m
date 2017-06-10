@@ -96,6 +96,7 @@
     
     _contentManager = [DDPageContentManager initWithPresenter:_presenter];
     _contentManager.delegate = self;
+    _contentManager.presenterController = self;
 }
 
 - (void)dd_addUI {
@@ -135,13 +136,12 @@
     // 初始化Size
     CGSize conentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _controllers.count, 0);
     [_contentManager.contentView setContentSize:conentSize];
-    
+    //  代码控制是不会启动懒加载的
+    [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];
     if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
     }
 
-    //  代码控制是不会启动懒加载的
-    [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];
 }
 
 - (void)reloadData {
