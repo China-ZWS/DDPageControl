@@ -130,17 +130,16 @@
     if (_defaultSelected >= _controllers.count) {
         // 越界处理
         _defaultSelected = _controllers.count - 1;
-    }
-    
-    
-    if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
-        [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
-    }
+    }    
 
     // 初始化Size
     CGSize conentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * _controllers.count, 0);
     [_contentManager.contentView setContentSize:conentSize];
     
+    if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
+        [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
+    }
+
     //  代码控制是不会启动懒加载的
     [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];
 }
@@ -153,11 +152,8 @@
 #pragma mark - DDPageBarManagerDelegate
 #pragma mark  点击pageBar 触发
 
-- (void)pageBar:(DDPageBar *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
+- (void)pageBar:(UICollectionView *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
     
-    if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
-        [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
-    }
     _defaultSelected = scrollToIndex;
     [_contentManager contentViewToSelectIndex:scrollToIndex animated:YES];
 }
@@ -171,10 +167,18 @@
 
 #pragma mark contentView 懒加载触发
 
-- (void)contentView:(DDPageContentView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
+- (void)contentView:(UICollectionView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
     
     if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
+    }
+}
+
+#pragma mark contentView  离开屏幕
+
+- (void)contentView:(UICollectionView *)contentView didEndDisplayingViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex  {
+    if ([_delegate respondsToSelector:@selector(slideSegment:didEndDisplayingViewController:scrollToIndex:)]) {
+        [_delegate slideSegment:self didEndDisplayingViewController:viewController scrollToIndex:scrollToIndex];
     }
 }
 

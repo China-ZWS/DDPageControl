@@ -11,7 +11,7 @@
 
 static NSString *const cellIdentifier = @"DDPageContentViewCell";
 
-@interface DDPageContentManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageContentManagerDelegate>
+@interface DDPageContentManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageContentViewPresenterDelegate>
 
 @property (nonatomic, strong) DDPageContentView *contentView;
 @property (nonatomic, strong) DDPagePresenter *presenter;
@@ -83,32 +83,44 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//    NSLog(@"content_row = %zd",indexPath.row);
+    
     static NSString *const identifier = @"DDPageContentViewCell";
     DDPageContentViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
-    pageModel.viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
-    [cell.contentView addSubview:pageModel.viewController.view];
-
+    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(nonnull UICollectionViewCell *)cell forItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NSLog(@"content_row = %zd",indexPath.row);
 
     DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
     [pageModel.viewController.view removeFromSuperview];
+    
+    if ([_delegate respondsToSelector:@selector(contentView:didEndDisplayingViewController:scrollToIndex:)]) {
+        [_delegate contentView:collectionView didEndDisplayingViewController:pageModel.viewController scrollToIndex:indexPath.row];
+    }
 }
 
 
 - (void)contentViewToSelectIndex:(NSInteger)index animated:(BOOL)animated {
-    
-    [_contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+   [_contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
    
     if ([_delegate respondsToSelector:@selector(contentViewDidScroll:)]) {
         [_delegate contentViewDidScroll:scrollView];
+    }
+}
+
+#pragma 滚动完毕就会调用（如果不是人为拖拽scrollView导致滚动完毕，才会调用这个方法）
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView; {
+  
+    if (!scrollView.decelerating && !scrollView.dragging) {
+        [self loadLodingForOnscreenRows];
     }
 }
 
@@ -139,6 +151,10 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
     {
         DDPageModel *pageModel = _presenter.cellModels[index];
         
+        DDPageContentViewCell *cell = (DDPageContentViewCell *)[_contentView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+        pageModel.viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
+        [cell.contentView addSubview:pageModel.viewController.view];
+
         
         if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
             [_delegate contentView:_contentView didSelectedViewController:pageModel.viewController scrollToIndex:index];

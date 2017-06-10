@@ -12,9 +12,10 @@
 
 @optional
 
-- (NSMutableDictionary *)slideSegment:(UICollectionView *)segmentBar willSelectedForOperationWithViewController:(UIViewController *)viewController index:(NSInteger)index;
+- (NSMutableDictionary *)slideSegment:(UIViewController *)segmentBar willSelectedForOperationWithViewController:(UIViewController *)viewController index:(NSInteger)index;
 
-- (void)slideSegment:(UICollectionView *)segmentBar didSelectedViewController:(UIViewController *)viewController index:(NSInteger)index;
+- (void)slideSegment:(UIViewController *)segmentBar didSelectedViewController:(UIViewController *)viewController index:(NSInteger)index;
 
+- (void)slideSegment:(UIViewController *)segmentBar didEndDisplayingViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
 
 @end

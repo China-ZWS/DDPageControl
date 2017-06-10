@@ -16,7 +16,10 @@
 
 - (void)contentViewDidScroll:(UIScrollView *)scrollView;
 
-- (void)contentView:(DDPageContentView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
+- (void)contentView:(UICollectionView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
+
+- (void)contentView:(UICollectionView *)contentView didEndDisplayingViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
+
 
 @end
 
@@ -24,6 +27,7 @@
 
 @property (nonatomic, readonly) DDPageContentView *contentView;               
 @property (nonatomic, assign) id<DDPageContentManagerDelegate> delegate;
+@property (nonatomic, assign) UIViewController *presenterController;
 
 + (instancetype)initWithPresenter:(DDPagePresenter *)presenter;
 

@@ -11,7 +11,7 @@
 #define SEGMENT_BAR_HEIGHT 44.f
 #define INDICATOR_HEIGHT 3.f
 
-@interface DDPageBarManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageBarManagerDelegate>
+@interface DDPageBarManager () <UICollectionViewDelegate, UICollectionViewDataSource,DDPageBarPresenterDelegate>
 
 @property (nonatomic, strong) DDPageBar *pageBar;                //!< bar
 @property (nonatomic, strong) DDPagePresenter *presenter;
@@ -118,6 +118,8 @@
     if (indexPath.row < 0 || indexPath.row >= _presenter.cellModels.count) {
         return;
     }
+    NSLog(@"manager_row = %zd",indexPath.row);
+
     if (_selectedIndex == indexPath.row) return;
     DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
     UIViewController *toSelectController = pageModel.viewController;

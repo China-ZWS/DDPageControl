@@ -17,7 +17,7 @@
 
 @optional
 
-- (void)pageBar:(DDPageBar *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
+- (void)pageBar:(UICollectionView *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex;
 
 @end
 
