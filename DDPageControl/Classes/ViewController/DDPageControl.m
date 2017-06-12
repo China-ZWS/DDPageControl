@@ -22,7 +22,6 @@
 @property (nonatomic, strong) DDPageBarManager *barManager;
 @property (nonatomic, strong) DDPageContentManager *contentManager;
 @property (nonatomic, strong) DDPagePresenter *presenter;
-@property (nonatomic, strong) NSMutableDictionary *operations;
 
 - (void)dd_configuration;
 - (void)dd_addUI;
@@ -83,8 +82,6 @@
 
 - (void)dd_configuration {
     
-    _operations = NSMutableDictionary.dictionary;
-
     _presenter = DDPagePresenter.new;
     _presenter.titleFont = _titleFont;
  
@@ -153,7 +150,6 @@
 #pragma mark  点击pageBar 触发
 
 - (void)pageBar:(UICollectionView *)pageBar didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
-    
     _defaultSelected = scrollToIndex;
     [_contentManager contentViewToSelectIndex:scrollToIndex animated:YES];
 }
@@ -162,7 +158,7 @@
 #pragma mark 点击pageBarItem或者直接滑动contentView 都会触发
 
 - (void)contentViewDidScroll:(UIScrollView *)scrollView {
-    [_barManager refreshPageBarFromContentView:scrollView];
+    [_barManager refreshIndicatorLayerFromContentView:scrollView];
 }
 
 #pragma mark contentView 懒加载触发
@@ -172,6 +168,7 @@
     if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
     }
+    [_barManager refreshIndexFromContentView:_contentManager.contentView];
 }
 
 #pragma mark contentView  离开屏幕

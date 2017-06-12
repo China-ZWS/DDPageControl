@@ -37,6 +37,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)refreshPageBarFromContentView:(UIScrollView *)scrollView;
+- (void)refreshIndicatorLayerFromContentView:(UIScrollView *)scrollView;
+- (void)refreshIndexFromContentView:(UIScrollView *)scrollView;
 
 @end

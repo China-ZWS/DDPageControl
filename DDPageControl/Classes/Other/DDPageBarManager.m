@@ -121,6 +121,7 @@
     NSLog(@"manager_row = %zd",indexPath.row);
 
     if (_selectedIndex == indexPath.row) return;
+    
     DDPageModel *pageModel = _presenter.cellModels[indexPath.row];
     UIViewController *toSelectController = pageModel.viewController;
     if ([_delegate respondsToSelector:@selector(pageBar:didSelectedViewController:scrollToIndex:)]) {
@@ -128,14 +129,7 @@
     }
 }
 
-- (void)refreshPageBarFromContentView:(UIScrollView *)scrollView {
-       
-    CGFloat percent = scrollView.contentOffset.x / scrollView.contentSize.width;
-    NSInteger index = round(percent * _presenter.cellModels.count);
-    if (index >= 0 && index < _presenter.cellModels.count)
-    {
-        [self setSelectedIndex:index];
-    }
+- (void)refreshIndicatorLayerFromContentView:(UIScrollView *)scrollView {
     
     CGFloat currentOffsetX = scrollView.contentOffset.x;
     CGFloat scrollViewW = scrollView.bounds.size.width;
@@ -154,7 +148,6 @@
         progress = currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW);
         CGFloat offsetX = model.originalItemWidth * progress;
         CGFloat distance = progress * (model.targetItemWidth - model.originalItemWidth);
-        
         
         CGRect frame = _indicatorLayer.frame;
         frame.origin.x =  model.originalItemX + offsetX + 10;
@@ -180,12 +173,21 @@
         frame.origin.x =  model.originalItemX - offsetX + 10;
         frame.size.width = model.originalItemWidth + distance - 20;
         _indicatorLayer.frame = frame;
-        
     }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     _startOffsetX = scrollView.contentOffset.x;
+}
+
+- (void)refreshIndexFromContentView:(UIScrollView *)scrollView {
+
+    CGFloat percent = scrollView.contentOffset.x / scrollView.contentSize.width;
+    NSInteger index = round(percent * _presenter.cellModels.count);
+    if (index >= 0 && index < _presenter.cellModels.count)
+    {
+        [self setSelectedIndex:index];
+    }
 }
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
