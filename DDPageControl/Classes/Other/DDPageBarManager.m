@@ -205,6 +205,14 @@
     }
     
     [_pageBar reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:selectedIndex inSection:0],[NSIndexPath indexPathForRow:_selectedIndex inSection:0]]];
+
+    
+//    [UIView setAnimationsEnabled:NO];
+//    [_pageBar performBatchUpdates:^{
+//
+//    } completion:^(BOOL finished) {
+//        [UIView setAnimationsEnabled:YES];
+//    }];
     
     _selectedIndex = selectedIndex;
 }

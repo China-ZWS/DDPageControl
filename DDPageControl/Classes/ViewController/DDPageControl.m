@@ -146,6 +146,12 @@
     [self dd_reset];
 }
 
+- (void)modifyWithScrollEnabled:(BOOL)scrollEnabled {
+    _scrollEnabled = scrollEnabled;
+    _contentManager.contentView.scrollEnabled = _scrollEnabled;
+}
+
+
 #pragma mark - DDPageBarManagerDelegate
 #pragma mark  点击pageBar 触发
 
@@ -165,10 +171,11 @@
 
 - (void)contentView:(UICollectionView *)contentView didSelectedViewController:(UIViewController *)viewController scrollToIndex:(NSInteger)scrollToIndex {
     
+    [_barManager refreshIndexFromContentView:_contentManager.contentView];
+
     if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
         [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
     }
-    [_barManager refreshIndexFromContentView:_contentManager.contentView];
 }
 
 #pragma mark contentView  离开屏幕

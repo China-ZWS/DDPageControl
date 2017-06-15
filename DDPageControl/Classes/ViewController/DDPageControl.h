@@ -29,6 +29,9 @@
 
 - (instancetype)initWithControllers:(NSArray *)controllers;
 + (instancetype)controllers:(NSArray *)controllers;
+
+- (void)modifyWithScrollEnabled:(BOOL)scrollEnabled;
+
 - (void)reloadData;
 
 @end
