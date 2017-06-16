@@ -35,7 +35,7 @@
     if ((self = [super init])) {
         self.presenter = presenter;
         self.presenter.pageBarManager = self;
-        
+        _selectedIndex = NSNotFound;
     }
     return self;
 }
