@@ -174,7 +174,7 @@
     
     [_barManager refreshIndexFromContentView:_contentManager.contentView];
 
-    if ([_delegate respondsToSelector:@selector(contentView:didSelectedViewController:scrollToIndex:)]) {
+    if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:index:)]) {
         [_delegate slideSegment:self didSelectedViewController:viewController index:scrollToIndex];
     }
 }
