@@ -84,10 +84,10 @@
     
     _presenter = DDPagePresenter.new;
     _presenter.titleFont = _titleFont;
- 
+    _presenter.titleColor = _titleColor;
+    
     _barManager = [DDPageBarManager initWithPresenter:_presenter];
     _barManager.selectedTitleColor = _selectedTitleColor;
-    _barManager.titleFont = _titleFont;
     _barManager.titleColor = _titleColor;
     _barManager.delegate = self;
     

@@ -107,7 +107,7 @@
     DDPageModel *model = _presenter.cellModels[indexPath.row];
     DDPageBarItem *barItem = [collectionView dequeueReusableCellWithReuseIdentifier:@"title" forIndexPath:indexPath];
     barItem.titleLabel.textColor = model.currentColor;
-    barItem.titleLabel.font = _titleFont;
+    barItem.titleLabel.font = model.titleFont;
     barItem.titleLabel.text = model.viewController.title;
     
     return barItem;

@@ -27,7 +27,6 @@
 @property (nonatomic, readonly) DDPageBar *pageBar;                //!< bar
 @property (nonatomic, readonly) UIView *indicatorLayer;
 
-@property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *selectedTitleColor;
 

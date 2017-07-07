@@ -47,13 +47,10 @@ static CGFloat const DDPageTitleMargin = 20;
         model.originalItemWidth = tempWidth;
         totalTextSizeWidth += tempWidth;
         model.targetItemX = totalTextSizeWidth;
+        model.currentColor = _titleColor;
         [_cellModels addObject:model];
-        
-        if (_defaultSelected == idx) {
-            model.currentColor = _selectedTitleColor;
-        } else {
-            model.currentColor = _titleColor;
-        }
+
+        model.titleFont = _titleFont;
         
         if (maxTextSizeWidth < tempWidth) {
             maxTextSizeWidth = tempWidth;

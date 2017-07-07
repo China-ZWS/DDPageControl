@@ -29,9 +29,7 @@
 @property (nonatomic, assign) id<DDPageBarPresenterDelegate>pageBarManager;
 @property (nonatomic, assign) id<DDPageContentViewPresenterDelegate>contentViewManager;
 
-@property (nonatomic, assign) NSInteger defaultSelected;
 @property (nonatomic, strong) UIColor *titleColor;
-@property (nonatomic, strong) UIColor *selectedTitleColor;
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *scrollLineColor;
 

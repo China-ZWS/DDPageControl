@@ -1,3 +1,4 @@
+
 //
 //  DDViewController.m
 //  DDPageControl
@@ -38,8 +39,8 @@
 //    DDMangerController *pageControl = [DDMangerController controllers:vcs];
     DDMangerController *pageControl = DDMangerController.new;
     pageControl.controllers = vcs;
-    pageControl.titleColor = [UIColor blackColor];
-    pageControl.selectedTitleColor = [UIColor redColor];
+    pageControl.titleColor = [UIColor blueColor];
+    pageControl.selectedTitleColor = [UIColor yellowColor];
     pageControl.scrollEnabled = YES;
     pageControl.defaultSelected = 1;
     
