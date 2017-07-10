@@ -218,6 +218,7 @@
 }
 
 - (void)reloadData {
+    _selectedIndex = NSNotFound;
     [_pageBar reloadData];
 }
 

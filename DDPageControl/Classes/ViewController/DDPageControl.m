@@ -136,7 +136,7 @@
     //  代码控制是不会启动懒加载的
     [_contentManager contentViewToSelectIndex:_defaultSelected animated:NO];
     [_barManager refreshIndexFromContentView:_contentManager.contentView];
-
+    
     if ([_delegate respondsToSelector:@selector(slideSegment:didSelectedViewController:index:)]) {
         [_delegate slideSegment:self didSelectedViewController:_controllers[_defaultSelected] index:_defaultSelected];
     }
