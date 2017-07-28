@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08297246AEA0E55A6B9E0ED5EBB86C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		10BF2BB4E2F9434F5F74FB82BAC83995 /* DDPageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE01C77A237489D30F7EA5D194D6999 /* DDPageBarManager.m */; };
 		1AFEA20B26D1D757620F8D7DCF750273 /* DDPageDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE7E49013001A121CB096A577CDBFB2 /* DDPageDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		242EB57E2AE1A15CFA30779B159BD220 /* DDPageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 203FD968F27373751655C1EB083FFE5C /* DDPageModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,24 +15,23 @@
 		34CF9730032A365952CF28F03C11319A /* DDPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 377CB3656FA62F9D0D2533BCC9ECED1A /* DDPageContentView.m */; };
 		36F08AD0A6A88F80E8B48CA24A7D5E68 /* DDPageBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C97320BD77E38CE23689F6526C1F926 /* DDPageBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3772DF3C9356FC97A2C3CA0CB1D7E676 /* DDPageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB08D239F26D5CCC1067CB4BD67211D2 /* DDPageControl-dummy.m */; };
-		449D47E9DFFDCE4F14877A6699829180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		4147EE88B94B2E2509FEA8E6D538266A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		4EA467B7822747415763854AD71B3FA8 /* DDPagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5EEBEB3C39AA184228E881E487ACBD /* DDPagePresenter.m */; };
 		54D16103835AC4CF8D29F14CEF961EF6 /* DDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A83EB6CCF79073DBB94D06D1CD539F5 /* DDPageControl.m */; };
 		5847B47C5666C84923F380A9A5B09A53 /* DDPageContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62240BC747D71CDFF8B123B36DD426C2 /* DDPageContentManager.m */; };
 		5A4A83A3C8086DFE9149A95F1D558E99 /* DDPageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB00546793D6A91983CCAFD8724B1CFA /* DDPageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AD57352E88B3CC361FA3F8E3979D37D /* DDPageBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F7190A3D1EF2359ECDD165255E1C9D /* DDPageBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6831C4B8C047262968109784C4129858 /* DDPageContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 341D27DE56D15EFA866FFA0C68DAEF4C /* DDPageContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A87A8E12F304A8D643636B4ADD81BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		7359D9198C3575D8ACA5B2E70830D558 /* Pods-DDPageControl_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC86FF698F7CA2BEF0CD26F610B4FC9 /* Pods-DDPageControl_Tests-dummy.m */; };
 		7B755FDF1FDFE010F3C0100E382D83AF /* DDPageContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C37524FCD249B8C2F5C68A81B228856 /* DDPageContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82D0EAB5EDAC18629D2DA6EC84DA1538 /* DDPagePresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB52D4F201E62C3F8FF435CE5308DA91 /* DDPagePresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F4A33412B2B61FB8C1B09EB1FBFFD62 /* DDPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 621C54E36901FA23CE4CC5D5D18BAC30 /* DDPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B57E47F8BE8D5B3850625F43FB051DF /* DDPageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E4EAED480981F522FF4C56D98355A24 /* DDPageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADC7D4509353DB17124AC366CF4922E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B3162F71687BD226CC3EB595F70AFCFA /* DDPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EFA5BCCA1B0C33B73D28DF1EDFF86 /* DDPageModel.m */; };
 		CD8CC7E2B38C58F4D7627311F02E5CEB /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D5A9D59BF2481DC7BDE08B97CC05A7 /* ReplaceMe.m */; };
 		DB9BB4EE8D0A10ED872C78DB68C2373D /* Pods-DDPageControl_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87029442FA4867744E25DC11F6DCC052 /* Pods-DDPageControl_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2ACF99BC5C941A8E87882000D518820 /* Pods-DDPageControl_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D14DF98BFBD4D2B162A77E63D93FE4 /* Pods-DDPageControl_Example-dummy.m */; };
-		F521BD04F4EA2FBBB832F903C0AB1AA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		FB5C322E1FAFD8C15A8DB0A90D25AC21 /* DDPageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE84D7BE1938C5E88B7E539E5711BE0 /* DDPageBar.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +65,7 @@
 		621C54E36901FA23CE4CC5D5D18BAC30 /* DDPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageControl.h; sourceTree = "<group>"; };
 		62240BC747D71CDFF8B123B36DD426C2 /* DDPageContentManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageContentManager.m; sourceTree = "<group>"; };
 		64422C252D11B7DB01E7C853F5CD8B79 /* Pods-DDPageControl_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDPageControl_Example-frameworks.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6B5B2B7205C97248CA10337A8FAC3BEE /* DDPageControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DDPageControl.modulemap; sourceTree = "<group>"; };
 		7E4EAED480981F522FF4C56D98355A24 /* DDPageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DDPageProtocol.h; sourceTree = "<group>"; };
 		83940DA29A26E1F67FCC9B902766B60F /* DDPageControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPageControl-prefix.pch"; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		BCC86FF698F7CA2BEF0CD26F610B4FC9 /* Pods-DDPageControl_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDPageControl_Tests-dummy.m"; sourceTree = "<group>"; };
 		C0D14DF98BFBD4D2B162A77E63D93FE4 /* Pods-DDPageControl_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDPageControl_Example-dummy.m"; sourceTree = "<group>"; };
 		CB00546793D6A91983CCAFD8724B1CFA /* DDPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPageControl-umbrella.h"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D07CA6819675D294C1073B04E33DC565 /* Pods-DDPageControl_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DDPageControl_Tests.modulemap"; sourceTree = "<group>"; };
 		D78EFA5BCCA1B0C33B73D28DF1EDFF86 /* DDPageModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DDPageModel.m; sourceTree = "<group>"; };
 		D7EAC7EAF63F1D284E326F886D084466 /* Pods-DDPageControl_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDPageControl_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F521BD04F4EA2FBBB832F903C0AB1AA8 /* Foundation.framework in Frameworks */,
+				ADC7D4509353DB17124AC366CF4922E9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A87A8E12F304A8D643636B4ADD81BF4 /* Foundation.framework in Frameworks */,
+				4147EE88B94B2E2509FEA8E6D538266A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449D47E9DFFDCE4F14877A6699829180 /* Foundation.framework in Frameworks */,
+				08297246AEA0E55A6B9E0ED5EBB86C78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +149,6 @@
 			);
 			name = Model;
 			path = Model;
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		76D9BE285B8AB4B1847D61BFB56EA6DA /* View */ = {
@@ -227,7 +219,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +268,14 @@
 			);
 			name = DDPageControl;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		D79F5948BFB57AFF447EBA3EE0A9A3C5 /* ViewController */ = {
@@ -414,7 +414,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -481,15 +481,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1A6CB7020347D3D62BEFBEBA2BD68DCA /* Release */ = {
+		0080F9536382A699B7CE2108500B3158 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -502,43 +503,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DDPageControl/DDPageControl.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DDPageControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		201617FF3E73882EA69A2695B7D0D0FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A2A9154754DD97BB2501AE70EF20E7B /* Pods-DDPageControl_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DDPageControl_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DDPageControl_Tests/Pods-DDPageControl_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DDPageControl_Tests;
+				PRODUCT_NAME = DDPageControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,11 +513,12 @@
 			};
 			name = Debug;
 		};
-		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -559,85 +526,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9A7AE4819EF15CE9C25A6A12A914C8AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E3404A1F3BEE12C90C0E5AD747CE532 /* Pods-DDPageControl_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DDPageControl_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DDPageControl_Example/Pods-DDPageControl_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DDPageControl_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -666,10 +561,11 @@
 			};
 			name = Debug;
 		};
-		BBB61E546B3949B6003BE822898B28E5 /* Release */ = {
+		59CB70D783AB5345F243976491BC0772 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A9CC0A68981251E37D6DBA9B1BBB0AE /* Pods-DDPageControl_Tests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -701,10 +597,11 @@
 			};
 			name = Release;
 		};
-		DBE6834A9E7FAC9C9D2495114E355974 /* Debug */ = {
+		6A978D5876D5A1747D33DE9159D54B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */;
+			baseConfigurationReference = 1A2A9154754DD97BB2501AE70EF20E7B /* Pods-DDPageControl_Tests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -716,14 +613,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DDPageControl/DDPageControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DDPageControl/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDPageControl_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DDPageControl/DDPageControl.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDPageControl_Tests/Pods-DDPageControl_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DDPageControl;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DDPageControl_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -732,10 +633,11 @@
 			};
 			name = Debug;
 		};
-		FAB2C9DB7B8BB6154BB6549DD32A35A5 /* Debug */ = {
+		710735FB429DB06B0163CA395449196A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E71FA2DB4585EE23496A0DDD20862E02 /* Pods-DDPageControl_Example.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -767,14 +669,126 @@
 			};
 			name = Debug;
 		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3A76E7E4D7D1DD35CD9A3BEA46812F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E3404A1F3BEE12C90C0E5AD747CE532 /* Pods-DDPageControl_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DDPageControl_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDPageControl_Example/Pods-DDPageControl_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DDPageControl_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E38DE65C91E0C2E25AD087A78B71E81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C92B5852D3043814992536311787047 /* DDPageControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DDPageControl/DDPageControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DDPageControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DDPageControl/DDPageControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DDPageControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2256D18C5260BB7C20FD6BD960209A2F /* Build configuration list for PBXNativeTarget "Pods-DDPageControl_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				201617FF3E73882EA69A2695B7D0D0FB /* Debug */,
-				BBB61E546B3949B6003BE822898B28E5 /* Release */,
+				6A978D5876D5A1747D33DE9159D54B2F /* Debug */,
+				59CB70D783AB5345F243976491BC0772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -782,8 +796,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
-				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -791,8 +805,8 @@
 		51902DC8EDC6344260D6605F8B4FC15A /* Build configuration list for PBXNativeTarget "Pods-DDPageControl_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FAB2C9DB7B8BB6154BB6549DD32A35A5 /* Debug */,
-				9A7AE4819EF15CE9C25A6A12A914C8AC /* Release */,
+				710735FB429DB06B0163CA395449196A /* Debug */,
+				A3A76E7E4D7D1DD35CD9A3BEA46812F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -800,8 +814,8 @@
 		DBBACAA9549AB0184BA1BA13C77F4994 /* Build configuration list for PBXNativeTarget "DDPageControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DBE6834A9E7FAC9C9D2495114E355974 /* Debug */,
-				1A6CB7020347D3D62BEFBEBA2BD68DCA /* Release */,
+				0080F9536382A699B7CE2108500B3158 /* Debug */,
+				E38DE65C91E0C2E25AD087A78B71E81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
