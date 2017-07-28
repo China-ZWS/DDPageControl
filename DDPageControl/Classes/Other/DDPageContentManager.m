@@ -154,6 +154,7 @@ static NSString *const cellIdentifier = @"DDPageContentViewCell";
 
 - (void)reloadData {
     [_contentView reloadData];
+    [_contentView layoutIfNeeded];
 }
 
 
