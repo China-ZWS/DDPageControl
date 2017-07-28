@@ -71,7 +71,6 @@ static CGFloat const DDPageTitleMargin = 20;
         }
     }
     
-    completionHandler();
 
     if ([_pageBarManager respondsToSelector:@selector(reloadData)]) {
         [_pageBarManager reloadData];
@@ -79,6 +78,8 @@ static CGFloat const DDPageTitleMargin = 20;
     if ([_contentViewManager respondsToSelector:@selector(reloadData)]) {
         [_contentViewManager reloadData];
     }
+    
+    completionHandler();
 }
 
 
